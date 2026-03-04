@@ -1,6 +1,12 @@
-body{
-    background-color: #A8DADC;
-}
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+ body{
+    background-color: #E6F5F6;
+} 
 
 /* NAVBAR BASE */
 .navbar{
@@ -96,33 +102,43 @@ body{
     align-items:center;
     text-align:center;
     padding:20px;
+    border-radius: 100px;
 }
 
 .hero h1{
-    font-size:48px;
+    font-size:60px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
 }
 
 .hero p{
     max-width:600px;
     margin:20px 0;
+    font-size: large;
 }
 
 .hero .cta{
-    background:#D97746;
-    color:rgb(250, 249, 249);
-    border:none;
-    padding:12px 25px;
-    border-radius:30px;
-    cursor:pointer;
-    font-weight:bold;
-    text-decoration: none;
+    background: rgba(230, 245, 246, 0.3); /* semi-transparent pale color */
+    backdrop-filter: blur(10px); /* frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* for Safari */
+    border: 1px solid rgba(230, 245, 246, 0.5); /* subtle border */
+    border-radius: 12px;
+    padding: 12px 24px;
+    color: #05545B; /* darker contrast text */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* soft depth */
 }
+
 
 /* ===== MAP SECTION ===== */
 .map-section{
     padding:80px 20px;
     background:#f4f9fb;
     text-align:center;
+    border-radius: 100px;
 }
 
 #map{
