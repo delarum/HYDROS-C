@@ -109,7 +109,7 @@ function getColor(status) {
 trackers.forEach(tracker => {
 
     const marker = L.circleMarker(tracker.coords, {
-        radius: 12,
+        radius: 8,
         color: "#ffffff",
         weight: 2,
         fillColor: getColor(tracker.status),
