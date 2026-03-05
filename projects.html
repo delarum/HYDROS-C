@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+        🌊 HYDROS-C
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="weather.html">Weather</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="involve.html" class="cta">Become Involved</a></li>
+    </ul>
+
+    <div class="menu-toggle" id="menuToggle">
+        ☰
+    </div>
+</nav>
+<script>
+const toggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
+<br> <br>
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Company Info -->
+        <div class="footer-section">
+            <h2 class="footer-logo">🌊 HYDROS-C</h2>
+            <p>
+                Leading large-scale water body cleaning and environmental 
+                restoration solutions. Protecting oceans, lakes, and rivers 
+                for a sustainable future.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="partner.html">Partnership</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="tracker.html">Devices</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-section">
+            <h3>Our Expertise</h3>
+            <ul>
+                <li>Ocean Waste Removal</li>
+                <li>Lake Restoration</li>
+                <li>Oil Spill Cleanup</li>
+                <li>Industrial Water Treatment</li>
+                <li>Marine Ecosystem Protection</li>
+            </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: info@hydrosc.com</p>
+            <p>Phone: +254 700 000 000</p><br>
+            <h3>Office Locations</h3>
+            <p>Nairobi, Kenya</p>
+            <p>Kigali, Rwanda</p>
+            <P>Dakar, Senegal</P>
+        </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        © 2026 HYDROS-C. All rights reserved.
+    </div>
+
+</footer>
+
+</body>
+</html>

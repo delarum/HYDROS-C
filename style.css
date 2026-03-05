@@ -120,8 +120,9 @@
 
 .hero .cta{
     background: rgba(230, 245, 246, 0.3); /* semi-transparent pale color */
-    backdrop-filter: blur(10px); /* frosted glass effect */
-    -webkit-backdrop-filter: blur(10px); /* for Safari */
+    /* frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px);/* for Safari */
     border: 1px solid rgba(230, 245, 246, 0.5); /* subtle border */
     border-radius: 12px;
     padding: 12px 24px;
@@ -169,7 +170,7 @@
     background: rgba(74, 144, 226, 0.5);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    animation: pulse 2s infinite;
+    animation: pulse 3s infinite;
 }
 
 @keyframes pulse {
