@@ -131,8 +131,12 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* soft depth */
 }
-
-
+.hero .cta:hover{
+    background: rgba(230, 245, 246, 0.5); /* slightly more opaque on hover */
+    border-color: rgba(230, 245, 246, 0.7); /* stronger border on hover */
+    color: #03363A; /* even darker text on hover */
+    box-shadow: 0 6px 40px rgba(0, 0, 0, 0.15); /* deeper shadow on hover */
+}
 /* ===== MAP SECTION ===== */
 .map-section{
     padding:80px 20px;

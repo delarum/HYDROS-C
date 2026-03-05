@@ -1,44 +1,632 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - HYDROS-C</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Home Page</title>
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'hydros-blue': '#1e3a5f',
+                        'hydros-light': '#2d5a87',
+                        'hydros-accent': '#3b82f6',
+                        'hydros-mint': '#b8e6e6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .wave-bg {
+            background: linear-gradient(135deg, #b8e6e6 0%, #e0f7f7 100%);
+        }
 
-<!-- Leaflet Map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+        .gradient-text {
+            background: linear-gradient(135deg, #1e3a5f 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15);
+        }
+
+        .timeline-line {
+            background: linear-gradient(to bottom, #3b82f6, #1e3a5f);
+        }
+
+        .pulse-ring {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.33);
+                opacity: 1;
+            }
+
+            80%,
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
 </head>
-<body>
+
+<body class="font-sans bg-gray-50 text-gray-800">
+
     <nav class="navbar">
-    <div class="logo">
-        🌊 HYDROS-C
-    </div>
+        <div class="logo">
+            🌊 HYDROS-C
+        </div>
 
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="weather.html">Weather</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="involve.html" class="cta">Become Involved</a></li>
-    </ul>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="involve.html" class="cta">Become Involved</a></li>
+        </ul>
 
-    <div class="menu-toggle" id="menuToggle">
-        ☰
-    </div>
-</nav>
-<script>
-const toggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+        <div class="menu-toggle" id="menuToggle">
+            ☰
+        </div>
+    </nav>
+    <script>
+        const toggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
 
-toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-</script>
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
+    <br>
+    <!-- Hero Section with wave effect -->
+    <section class="wave-bg min-h-[60vh] flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="none">
+                <path d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z" fill="#1e3a5f" opacity="0.3">
+                    <animate attributeName="d" dur="10s" repeatCount="indefinite" values="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z;
+                                M0,300 Q300,400 600,300 T1200,300 L1200,600 L0,600 Z;
+                                M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z" />
+                </path>
+                <path d="M0,400 Q400,300 800,400 T1600,400 L1600,600 L0,600 Z" fill="#3b82f6" opacity="0.2">
+                    <animate attributeName="d" dur="15s" repeatCount="indefinite" values="M0,400 Q400,300 800,400 T1600,400 L1600,600 L0,600 Z;
+                                M0,400 Q400,500 800,400 T1600,400 L1600,600 L0,600 Z;
+                                M0,400 Q400,300 800,400 T1600,400 L1600,600 L0,600 Z" />
+                </path>
+            </svg>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div
+                class="inline-block mb-4 px-4 py-1 bg-white/30 backdrop-blur-sm rounded-full text-hydros-blue font-semibold text-sm uppercase tracking-wider">
+                Established 2001
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-hydros-blue mb-6 leading-tight">
+                Guardians of <br>
+                <span class="gradient-text">Water & Life</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-hydros-normal max-w-3xl mx-auto font-normal">
+                Pioneering intelligent water ecosystem restoration across Africa's most vital lake basins, river basins
+                and the coastal regions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center space-x-2 text-hydros-accent font-semibold">
+                        <i class="fas fa-bullseye"></i>
+                        <span>OUR MISSION</span>
+                    </div>
+                    <h2 class="text-4xl font-bold text-hydros-blue">Restoring Nature's Balance</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        HYDROS-C deploys cutting-edge intelligent water tracking systems across major river basins and
+                        coastal areas to monitor pollution, ecosystem health, and biodiversity. We believe that
+                        protecting water is protecting life itself.
+                    </p>
+                    <div class="flex items-start space-x-4 p-4 bg-blue-50 rounded-xl border-l-4 border-hydros-accent">
+                        <i class="fas fa-quote-left text-hydros-accent text-2xl mt-1"></i>
+                        <p class="text-hydros-blue italic font-medium">
+                            "Every drop counts, every ecosystem matters. We're not just cleaning water—we're restoring
+                            life for the present and future generations."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-hydros-mint to-blue-100 rounded-3xl transform rotate-3 opacity-50">
+                    </div>
+                    <div class="relative bg-white p-8 rounded-2xl shadow-2xl">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center p-4 bg-gray-50 rounded-xl">
+                                <div class="text-3xl font-bold text-hydros-blue counter" data-target="10">0</div>
+                                <div class="text-sm text-gray-600 mt-1">Monitoring Stations</div>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded-xl">
+                                <div class="text-3xl font-bold text-hydros-blue counter" data-target="70000">0</div>
+                                <div class="text-sm text-gray-600 mt-1">Km squared of Restoration Areas</div>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded-xl">
+                                <div class="text-3xl font-bold text-hydros-blue counter" data-target="15">0</div>
+                                <div class="text-sm text-gray-600 mt-1">Partner NGOs</div>
+                            </div>
+                            <div class="text-center p-4 bg-gray-50 rounded-xl">
+                                <div class="text-3xl font-bold text-hydros-blue counter" data-target="85">0</div>
+                                <div class="text-sm text-gray-600 mt-1"> Tracker Accuracy Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Timeline -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-hydros-blue mb-4">Our Journey</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">From a vision to reality—transforming water conservation in
+                    Africa.</p>
+            </div>
+
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Timeline Line -->
+                <div
+                    class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full timeline-line rounded-full hidden md:block">
+                </div>
+
+                <!-- Timeline Items -->
+                <div class="space-y-12">
+                    <!-- 2020 -->
+                    <div class="relative flex items-center md:justify-between md:flex-row flex-col group">
+                        <div class="md:w-5/12 w-full md:text-right text-center md:pr-8 mb-4 md:mb-0">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border border-gray-100">
+                                <span class="text-hydros-accent font-bold text-lg">2001</span>
+                                <h3 class="text-xl font-bold text-hydros-blue mt-2">Foundation</h3>
+                                <p class="text-gray-600 mt-2">HYDROS-C founded in Nairobi with a mission to tackle water
+                                    pollution through technology, a field that was largely unexplored at the time.
+                                    Looking at the huge gap in the market for something that would be considered so
+                                    essential for life,
+                                    the founders were determined to take a risk by raising funds from charitable
+                                    organization and launching the first project at the Ngong' River.
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-hydros-accent rounded-full border-4 border-white shadow-lg z-10 hidden md:block">
+                            <div class="pulse-ring absolute inset-0 rounded-full bg-hydros-accent"></div>
+                        </div>
+                        <div class="md:w-5/12 w-full md:pl-8"></div>
+                    </div>
+
+                    <!-- 2022 -->
+                    <div class="relative flex items-center md:justify-between md:flex-row flex-col group">
+                        <div class="md:w-5/12 w-full md:pr-8"></div>
+                        <div
+                            class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-hydros-accent rounded-full border-4 border-white shadow-lg z-10 hidden md:block">
+                        </div>
+                        <div class="md:w-5/12 w-full md:text-left text-center md:pl-8 mb-4 md:mb-0">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border border-gray-100">
+                                <span class="text-hydros-accent font-bold text-lg">2022</span>
+                                <h3 class="text-xl font-bold text-hydros-blue mt-2">Nairobi River Initiative</h3>
+                                <p class="text-gray-600 mt-2">Launched comprehensive regeneration project for the
+                                    Nairobi River Basin in partnership with county government by initiating a thorough
+                                    garbage collection and treatment program.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2024 -->
+                    <div class="relative flex items-center md:justify-between md:flex-row flex-col group">
+                        <div class="md:w-5/12 w-full md:text-right text-center md:pr-8 mb-4 md:mb-0">
+                            <div class="bg-white p-6 rounded-2xl shadow-lg card-hover border border-gray-100">
+                                <span class="text-hydros-accent font-bold text-lg">2024</span>
+                                <h3 class="text-xl font-bold text-hydros-blue mt-2">Expansion</h3>
+                                <p class="text-gray-600 mt-2">Extended operations to the Lake Victoria basin around
+                                    Southern Nyanza Area.</p>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-hydros-accent rounded-full border-4 border-white shadow-lg z-10 hidden md:block">
+                        </div>
+                        <div class="md:w-5/12 w-full md:pl-8"></div>
+                    </div>
+
+                    <!-- 2026 -->
+                    <div class="relative flex items-center md:justify-between md:flex-row flex-col group">
+                        <div class="md:w-5/12 w-full md:pr-8"></div>
+                        <div
+                            class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-hydros-blue rounded-full border-4 border-white shadow-lg z-10 hidden md:block animate-pulse">
+                        </div>
+                        <div class="md:w-5/12 w-full md:text-left text-center md:pl-8 mb-4 md:mb-0">
+                            <div
+                                class="bg-gradient-to-br from-hydros-blue to-hydros-light p-6 rounded-2xl shadow-lg text-white">
+                                <span class="text-blue-200 font-bold text-lg">2026</span>
+                                <h3 class="text-xl font-bold mt-2">Today</h3>
+                                <p class="text-blue-100 mt-2">Leading water restoration efforts across Africa with 10+
+                                    monitoring stations and international partnerships.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-hydros-blue mb-4">Our Core Values</h2>
+                <p class="text-gray-600">The principles that guide every drop of our work.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="group p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100 card-hover">
+                    <div
+                        class="w-16 h-16 bg-hydros-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-leaf text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hydros-blue mb-3">Sustainability First</h3>
+                    <p class="text-gray-600">Every solution we implement is designed for long-term ecological balance,
+                        ensuring future generations inherit clean water systems.</p>
+                </div>
+
+                <div
+                    class="group p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100 card-hover">
+                    <div
+                        class="w-16 h-16 bg-hydros-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-microchip text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hydros-blue mb-3">Innovation Driven</h3>
+                    <p class="text-gray-600">We leverage IoT sensors, AI analytics, and real-time monitoring to
+                        revolutionize water quality management.</p>
+                </div>
+
+                <div
+                    class="group p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100 card-hover">
+                    <div
+                        class="w-16 h-16 bg-hydros-accent rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-handshake text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-hydros-blue mb-3">Community Centric</h3>
+                    <p class="text-gray-600">True change happens together. We partner with local governments, NGOs, and
+                        communities for lasting impact.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nairobi River Focus -->
+    <section class="py-20 bg-hydros-blue text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div
+                class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full filter blur-3xl transform -translate-x-1/2 -translate-y-1/2">
+            </div>
+            <div
+                class="absolute bottom-0 right-0 w-96 h-96 bg-blue-400 rounded-full filter blur-3xl transform translate-x-1/2 translate-y-1/2">
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div
+                        class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <span class="font-semibold">Flagship Project</span>
+                    </div>
+                    <h2 class="text-4xl font-bold mb-6">The Nairobi River Basin Regeneration</h2>
+                    <p class="text-blue-100 text-lg mb-6 leading-relaxed">
+                        Our current flagship initiative focuses on the comprehensive regeneration of the Nairobi River
+                        Basin and its tributaries. Once a glorious lifeline for the region, the basin suffered decades
+                        of degradation.
+                    </p>
+                    <p class="text-blue-100 text-lg mb-8 leading-relaxed">
+                        In partnership with the Nairobi County Government and several dedicated NGOs, we're deploying
+                        all our resources to monitor, treat, restore, and implement preventive measures.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl">
+                            <div class="text-3xl font-bold text-blue-200">24/7</div>
+                            <div class="text-sm text-blue-100">Real-time Monitoring</div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl">
+                            <div class="text-3xl font-bold text-blue-200">12</div>
+                            <div class="text-sm text-blue-100">Tributaries Covered</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4 mt-8">
+                            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl float-animation">
+                                <i class="fas fa-water text-3xl text-blue-300 mb-3"></i>
+                                <h4 class="font-bold mb-1">Water Quality</h4>
+                                <p class="text-sm text-blue-200">Continuous pH, turbidity, and contaminant tracking</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
+                                <i class="fas fa-fish text-3xl text-blue-300 mb-3"></i>
+                                <h4 class="font-bold mb-1">Biodiversity</h4>
+                                <p class="text-sm text-blue-200">Marine life health assessment</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl">
+                                <i class="fas fa-industry text-3xl text-blue-300 mb-3"></i>
+                                <h4 class="font-bold mb-1">Pollution Control</h4>
+                                <p class="text-sm text-blue-200">Industrial discharge monitoring</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl float-animation"
+                                style="animation-delay: 1s;">
+                                <i class="fas fa-seedling text-3xl text-blue-300 mb-3"></i>
+                                <h4 class="font-bold mb-1">Restoration</h4>
+                                <p class="text-sm text-blue-200">Ecosystem rehabilitation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team/Leadership -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-hydros-blue mb-4">Leadership Team</h2>
+                <p class="text-gray-600">Experts dedicated to preserving our most precious resource.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover text-center p-8">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-md">
+                        <img src="images/amina.jpg" alt="Dr. Amina Byishimo" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-hydros-blue">Dr. Eva Atieno</h3>
+                    <p class="text-hydros-accent font-medium mb-3">Founder & CEO</p>
+                    <p class="text-gray-600 text-sm">Environmental scientist with 15+ years in aquatic ecosystem
+                        restoration.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover text-center p-8">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-md">
+                        <img src="images/amina.jpg" alt="Dr. Amina Byishimo" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-hydros-blue">James Ali</h3>
+                    <p class="text-hydros-accent font-medium mb-3">Head of Operations</p>
+                    <p class="text-gray-600 text-sm">Expert in large-scale water treatment infrastructure and project
+                        management.</p>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover text-center p-8">
+                    <div class="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden shadow-md">
+                        <img src="images/amina.jpg" alt="Dr. Amina Byishimo" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold text-hydros-blue">Dr. Amina Byishimo</h3>
+                    <p class="text-hydros-accent font-medium mb-3">Chief Scientist</p>
+                    <p class="text-gray-600 text-sm">Leading our R&D in smart monitoring technologies and data
+                        analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="py-16 bg-white border-t border-gray-100">
+        <h3 class="text-xl font-bold text-hydros-blue">Dr. Amina Byishimo</h3>
+        <p class="text-hydros-accent font-medium mb-3">Chief Scientist</p>
+        <p class="text-gray-600 text-sm">Leading our R&D in smart monitoring technologies and data analytics.</p>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="py-16 bg-white border-t border-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-gray-500 font-semibold mb-8 uppercase tracking-wider">Trusted Partners</h3>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-60">
+                <div class="flex items-center space-x-2 text-2xl font-bold text-hydros-blue">
+                    <i class="fas fa-landmark"></i>
+                    <span>Nairobi County</span>
+                </div>
+                <div class="flex items-center space-x-2 text-2xl font-bold text-hydros-blue">
+                    <i class="fas fa-globe-africa"></i>
+                    <span>WWF Kenya</span>
+                </div>
+                <div class="flex items-center space-x-2 text-2xl font-bold text-hydros-blue">
+                    <i class="fas fa-university"></i>
+                    <span>University of Nairobi</span>
+                </div>
+                <div class="flex items-center space-x-2 text-2xl font-bold text-hydros-blue">
+                    <i class="fas fa-hand-holding-water"></i>
+                    <span>Water Project</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-hydros-blue to-hydros-light text-white text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-6">Join Us in Protecting Our Waters</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Whether you're a potential partner, investor, or
+                passionate about environmental conservation, we'd love to hear from you.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                    class="px-8 py-4 bg-white text-hydros-blue rounded-full font-bold hover:bg-blue-50 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    Partner With Us
+                </button>
+                <button
+                    class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold hover:bg-white/10 transition">
+                    View Our Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Matching your existing design) -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- Company Info -->
+            <div class="footer-section">
+                <h2 class="footer-logo">🌊 HYDROS-C</h2>
+                <p>
+                    Leading large-scale water body cleaning and environmental
+                    restoration solutions. Protecting oceans, lakes, and rivers
+                    for a sustainable future.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section">
+                <h3>Our Expertise</h3>
+                <ul>
+                    <li>Ocean Waste Removal</li>
+                    <li>Lake Restoration</li>
+                    <li>Oil Spill Cleanup</li>
+                    <li>Industrial Water Treatment</li>
+                    <li>Marine Ecosystem Protection</li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@hydrosc.com</p>
+                <p>Phone: +254 700 000 000</p>
+                <p>Nairobi, Kenya</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            © 2026 HYDROS-C. All rights reserved.
+        </div>
+
+    </footer>
+    <!-- Leaflet JS FIRST -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- AOS JS SECOND -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- YOUR SCRIPT LAST -->
+    <script src="hydros.js"></script>
+
+    <script>
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(animateCounters, 20);
+                } else {
+                    counter.innerText = target + (target === 85 ? '%' : '+');
+                }
+            });
+        };
+
+        // Intersection Observer for counters
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const statsSection = document.querySelector('.counter').closest('section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
+
 </html>
