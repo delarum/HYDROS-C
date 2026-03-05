@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner With Us - HYDROS-C</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'hydros-blue': '#1e3a5f',
+                        'hydros-light': '#2d5a87',
+                        'hydros-accent': '#3b82f6',
+                        'hydros-mint': '#b8e6e6',
+                        'corporate': '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #1e3a5f 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .input-field {
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15);
+        }
+        .partner-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .partner-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(30, 58, 95, 0.25);
+        }
+        .check-icon {
+            transition: all 0.3s ease;
+        }
+        .benefit-item:hover .check-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: #3b82f6;
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, #1e3a5f 0%, #3b82f6 100%);
+            transition: all 0.3s ease;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -5px rgba(59, 130, 246, 0.4);
+        }
+        .floating-shape {
+            animation: float 20s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+        .step-number {
+            background: linear-gradient(135deg, #1e3a5f 0%, #3b82f6 100%);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+
+       <!-- Hero Section -->
+    <section class="relative bg-hydros-blue overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full filter blur-3xl floating-shape"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400 rounded-full filter blur-3xl floating-shape" "></div>
+        </div>
+        
+        <div class="container mx-auto px-6 py-24 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-white/20">
+                    <i class="fas fa-handshake text-blue-300"></i>
+                    <span class="text-blue-100 font-medium text-sm tracking-wider uppercase">Strategic Partnerships</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    Partner With <span class="text-blue-300">Purpose</span>
+                </h1>
+                <p class="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed mb-8">
+                    Join forces with Africa's leading water ecosystem restoration company. 
+                    Together, we create measurable environmental impact while driving sustainable business value.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#partnership-form" class="px-8 py-4 bg-white text-hydros-blue rounded-lg font-bold hover:bg-blue-50 transition shadow-lg inline-flex items-center justify-center space-x-2">
+                        <span>Become a Partner</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#benefits" class="px-8 py-4 bg-transparent border-2 border-white/30 text-white rounded-lg font-bold hover:bg-white/10 transition inline-flex items-center justify-center">
+                        Explore Benefits
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Separator -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-16" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-gray-50"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Partnership Types -->
+    <section class="py-20 bg-gray-50" id="benefits">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-hydros-blue mb-4">Partnership Opportunities</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Flexible collaboration models designed to align with your corporate objectives and sustainability goals.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Corporate Sponsorship -->
+                <div class="partner-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-hydros-blue text-2xl">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-hydros-blue mb-3">Corporate Sponsorship</h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Align your brand with impactful water conservation projects. Ideal for CSR initiatives and ESG reporting.
+                        </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Brand visibility on restoration sites
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Annual impact reports
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Employee engagement programs
+                            </li>
+                        </ul>
+                        <div class="text-hydros-accent font-semibold text-sm flex items-center cursor-pointer hover:text-hydros-blue transition">
+                            Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology Partners -->
+                <div class="partner-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-50 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mb-6 text-cyan-600 text-2xl">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-hydros-blue mb-3">Technology Partners</h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Integrate your IoT, AI, or data solutions into our monitoring infrastructure. Co-develop innovative solutions.
+                        </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                API integration opportunities
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Joint R&D projects
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Pilot program access
+                            </li>
+                        </ul>
+                        <div class="text-hydros-accent font-semibold text-sm flex items-center cursor-pointer hover:text-hydros-blue transition">
+                            Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Government & NGOs -->
+                <div class="partner-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-150"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6 text-indigo-600 text-2xl">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-hydros-blue mb-3">Government & NGOs</h3>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Scale conservation efforts through public-private partnerships. Access funding and regulatory support.
+                        </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Policy influence & advocacy
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Multi-stakeholder projects
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Grant collaboration
+                            </li>
+                        </ul>
+                        <div class="text-hydros-accent font-semibold text-sm flex items-center cursor-pointer hover:text-hydros-blue transition">
+                            Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Partner With Us -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+                <div>
+                    <h2 class="text-4xl font-bold text-hydros-blue mb-6">Why Leading Organizations Choose HYDROS-C</h2>
+                    <p class="text-gray-600 mb-8 text-lg">
+                        We combine cutting-edge technology with deep environmental expertise to deliver measurable results that matter to stakeholders and communities alike.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="benefit-item flex items-start space-x-4 p-4 rounded-xl hover:bg-blue-50 transition cursor-default">
+                            <div class="check-icon w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-hydros-blue flex-shrink-0">
+                                <i class="fas fa-chart-line text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-hydros-blue mb-1">Measurable Impact</h4>
+                                <p class="text-gray-600 text-sm">Real-time data dashboards tracking water quality improvements, biodiversity recovery, and pollution reduction.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item flex items-start space-x-4 p-4 rounded-xl hover:bg-blue-50 transition cursor-default">
+                            <div class="check-icon w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-hydros-blue flex-shrink-0">
+                                <i class="fas fa-certificate text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-hydros-blue mb-1">ESG Compliance</h4>
+                                <p class="text-gray-600 text-sm">Meet sustainability reporting requirements with verified environmental outcomes and third-party audits.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item flex items-start space-x-4 p-4 rounded-xl hover:bg-blue-50 transition cursor-default">
+                            <div class="check-icon w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-hydros-blue flex-shrink-0">
+                                <i class="fas fa-network-wired text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-hydros-blue mb-1">Extensive Network</h4>
+                                <p class="text-gray-600 text-sm">Access our partnerships with Nairobi County, WWF, University of Nairobi, and 15+ specialized NGOs.</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item flex items-start space-x-4 p-4 rounded-xl hover:bg-blue-50 transition cursor-default">
+                            <div class="check-icon w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-hydros-blue flex-shrink-0">
+                                <i class="fas fa-shield-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-hydros-blue mb-1">Risk Mitigation</h4>
+                                <p class="text-gray-600 text-sm">Proven track record managing large-scale environmental projects with full regulatory compliance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-hydros-mint to-blue-100 rounded-3xl transform rotate-3 opacity-30"></div>
+                    <div class="relative bg-hydros-blue rounded-2xl p-8 text-white shadow-2xl">
+                        <h3 class="text-2xl font-bold mb-6">Partnership Impact Highlights</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between border-b border-white/20 pb-4">
+                                <span class="text-blue-200">Active Partners</span>
+                                <span class="text-3xl font-bold">25+</span>
+                            </div>
+                            <div class="flex items-center justify-between border-b border-white/20 pb-4">
+                                <span class="text-blue-200">Projects Completed</span>
+                                <span class="text-3xl font-bold">7</span>
+                            </div>
+                            <div class="flex items-center justify-between border-b border-white/20 pb-4">
+                                <span class="text-blue-200">Average Liters Treated Daily</span>
+                                <span class="text-3xl font-bold">2.5M</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-blue-200">Community Beneficiaries</span>
+                                <span class="text-3xl font-bold">500K+</span>
+                            </div>
+                        </div>
+                        <div class="mt-8 p-4 bg-white/10 rounded-xl border border-white/20">
+                            <p class="text-sm text-blue-100 italic">
+                                "Our partnership with HYDROS-C has been instrumental in achieving our 2030 sustainability goals."
+                            </p>
+                            <div class="mt-3 flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-blue-300 rounded-full flex items-center justify-center text-hydros-blue font-bold">JD</div>
+                                <div>
+                                    <div class="font-semibold text-sm">James Deng'</div>
+                                    <div class="text-xs text-blue-200">Sustainability Director, Corp Ltd</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Process -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-hydros-blue mb-4">Partnership Process</h2>
+                <p class="text-gray-600">Four simple steps to begin your journey with us.</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="relative">
+                        <div class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4 mx-auto shadow-lg">1</div>
+                        <h3 class="text-lg font-bold text-hydros-blue text-center mb-2">Inquiry</h3>
+                        <p class="text-gray-600 text-sm text-center">Submit your partnership proposal through our secure form below.</p>
+                        <div class="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-hydros-blue to-gray-200 -z-10 transform -translate-x-8"></div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4 mx-auto shadow-lg">2</div>
+                        <h3 class="text-lg font-bold text-hydros-blue text-center mb-2">Assessment</h3>
+                        <p class="text-gray-600 text-sm text-center">Our team evaluates alignment and explores collaboration opportunities.</p>
+                        <div class="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-hydros-blue to-gray-200 -z-10 transform -translate-x-8"></div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4 mx-auto shadow-lg">3</div>
+                        <h3 class="text-lg font-bold text-hydros-blue text-center mb-2">Proposal</h3>
+                        <p class="text-gray-600 text-sm text-center">Receive a tailored partnership framework with clear KPIs and timelines.</p>
+                        <div class="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-hydros-blue to-gray-200 -z-10 transform -translate-x-8"></div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="step-number w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4 mx-auto shadow-lg">4</div>
+                        <h3 class="text-lg font-bold text-hydros-blue text-center mb-2">Launch</h3>
+                        <p class="text-gray-600 text-sm text-center">Formalize agreement and begin collaborative implementation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Form -->
+    <section class="py-24 bg-white relative overflow-hidden" id="partnership-form">
+        <!-- Background Decoration -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50 to-transparent opacity-50"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-hydros-mint rounded-full filter blur-3xl opacity-20 -mb-20 -ml-20"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-hydros-blue mb-4">Begin Partnership Discussion</h2>
+                    <p class="text-gray-600">Complete the form below and our partnerships team will respond within 48 hours.</p>
+                </div>
+
+                <div class="glass-card rounded-3xl shadow-2xl p-8 md:p-12">
+                    <form id="partnershipForm" class="space-y-8">
+                        <!-- Organization Details -->
+                        <div class="border-b border-gray-200 pb-8">
+                            <h3 class="text-lg font-bold text-hydros-blue mb-6 flex items-center">
+                                <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3 text-sm">1</span>
+                                Organization Information
+                            </h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-gray-700">Organization Name <span class="text-red-500">*</span></label>
+                                    <input type="text" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none" placeholder="Company/Organization Ltd">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-gray-700">Industry Sector <span class="text-red-500">*</span></label>
+                                    <select aria-label="choose" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none bg-white">
+                                        <option value="">Select Industry</option>
+                                        <option value="technology">Technology & Innovation</option>
+                                        <option value="manufacturing">Manufacturing & Industrial</option>
+                                        <option value="finance">Finance & Investment</option>
+                                        <option value="energy">Energy & Utilities</option>
+                                        <option value="government">Government & Public Sector</option>
+                                        <option value="ngo">NGO & Non-Profit</option>
+                                        <option value="consulting">Consulting & Professional Services</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-gray-700">Organization Size <span class="text-red-500">*</span></label>
+                                    <select aria-label="choose" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none bg-white">
+                                        <option value="">Select Size</option>
+                                        <option value="startup">Startup (1-10 employees)</option>
+                                        <option value="small">Small (11-50 employees)</option>
+                                        <option value="medium">Medium (51-200 employees)</option>
+                                        <option value="large">Large (201-1000 employees)</option>
+                                        <option value="enterprise">Enterprise (1000+ employees)</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-gray-700">Website</label>
+                                    <input type="url" class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none" placeholder="https://www.company.com">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="border-b border-gray-200 pb-8">
+                            <h3 class="text-lg font-bold text-hydros-blue mb-6 flex items-center">
+                                <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3 text-sm">2</span>
+                                Primary Contact
+                            </h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-gray-700">Full Name <span class="text-red-500">*</span></label>
+                                    <input type="text" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none" placeholder="John Smith">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-gray-700">Job Title <span class="text-red-500">*</span></label>
+                                    <input type="text" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none" placeholder="Sustainability Director">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-gray-700">Email Address <span class="text-red-500">*</span></label>
+                                    <input type="email" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none" placeholder="john.smith@company.com">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-gray-700">Phone Number <span class="text-red-500">*</span></label>
+                                    <input type="tel" required class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none" placeholder="+254 700 000 000">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Partnership Details -->
+                        <div class="border-b border-gray-200 pb-8">
+                            <h3 class="text-lg font-bold text-hydros-blue mb-6 flex items-center">
+                                <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3 text-sm">3</span>
+                                Partnership Interests
+                            </h3>
+                            <div class="space-y-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-gray-700">Partnership Type <span class="text-red-500">*</span></label>
+                                    <div class="grid md:grid-cols-3 gap-4">
+                                        <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-hydros-accent hover:bg-blue-50 transition">
+                                            <input type="checkbox" name="partnership_type" value="sponsorship" class="w-4 h-4 text-hydros-accent rounded focus:ring-hydros-accent">
+                                            <span class="ml-3 text-sm font-medium text-gray-700">Corporate Sponsorship</span>
+                                        </label>
+                                        <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-hydros-accent hover:bg-blue-50 transition">
+                                            <input type="checkbox" name="partnership_type" value="technology" class="w-4 h-4 text-hydros-accent rounded focus:ring-hydros-accent">
+                                            <span class="ml-3 text-sm font-medium text-gray-700">Technology Integration</span>
+                                        </label>
+                                        <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-hydros-accent hover:bg-blue-50 transition">
+                                            <input type="checkbox" name="partnership_type" value="research" class="w-4 h-4 text-hydros-accent rounded focus:ring-hydros-accent">
+                                            <span class="ml-3 text-sm font-medium text-gray-700">Research & Development</span>
+                                        </label>
+                                        <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-hydros-accent hover:bg-blue-50 transition">
+                                            <input type="checkbox" name="partnership_type" value="implementation" class="w-4 h-4 text-hydros-accent rounded focus:ring-hydros-accent">
+                                            <span class="ml-3 text-sm font-medium text-gray-700">Project Implementation</span>
+                                        </label>
+                                        <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-hydros-accent hover:bg-blue-50 transition">
+                                            <input type="checkbox" name="partnership_type" value="funding" class="w-4 h-4 text-hydros-accent rounded focus:ring-hydros-accent">
+                                            <span class="ml-3 text-sm font-medium text-gray-700">Funding & Investment</span>
+                                        </label>
+                                        <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-hydros-accent hover:bg-blue-50 transition">
+                                            <input type="checkbox" name="partnership_type" value="other" class="w-4 h-4 text-hydros-accent rounded focus:ring-hydros-accent">
+                                            <span class="ml-3 text-sm font-medium text-gray-700">Other</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label class="text-sm font-semibold text-gray-700">Preferred Project Location</label>
+                                        <select aria-label="choose project location" class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none bg-white">
+                                            <option value="">Select Region</option>
+                                            <option value="nairobi">Nairobi River Basin</option>
+                                            <option value="coastal">Kenyan Coast</option>
+                                            <option value="lake">Lake Victoria Region</option>
+                                            <option value="rift">Rift Valley Lakes</option>
+                                            <option value="multiple">Multiple Regions</option>
+                                            <option value="flexible">Flexible</option>
+                                        </select>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label class="text-sm font-semibold text-gray-700">Proposed Timeline</label>
+                                        <select aria-label="choose timeline" class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none bg-white">
+                                            <option value="">Select Timeline</option>
+                                            <option value="immediate">Immediate (0-3 months)</option>
+                                            <option value="short">Short-term (3-6 months)</option>
+                                            <option value="medium">Medium-term (6-12 months)</option>
+                                            <option value="long">Long-term (1+ years)</option>
+                                            <option value="exploratory">Exploratory</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-gray-700">Partnership Objectives <span class="text-red-500">*</span></label>
+                                    <textarea required rows="4" class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none resize-none" placeholder="Please describe your organization's goals for this partnership, specific areas of interest, and expected outcomes..."></textarea>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-gray-700">Proposed Contribution</label>
+                                    <textarea rows="3" class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none resize-none" placeholder="Describe the resources, expertise, or funding your organization can bring to the partnership..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Information -->
+                        <div class="pb-4">
+                            <h3 class="text-lg font-bold text-hydros-blue mb-6 flex items-center">
+                                <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3 text-sm">4</span>
+                                Additional Information
+                            </h3>
+                            <div class="space-y-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-gray-700">How did you hear about HYDROS-C?</label>
+                                    <select aria-label="How did you hear about HYDROS-C?" class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none bg-white">
+                                        <option value="">Select Option</option>
+                                        <option value="search">Search Engine</option>
+                                        <option value="social">Social Media</option>
+                                        <option value="referral">Referral/Word of Mouth</option>
+                                        <option value="event">Industry Event/Conference</option>
+                                        <option value="media">News/Media Coverage</option>
+                                        <option value="existing">Existing Partner</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <label class="text-sm font-semibold text-gray-700">Additional Comments</label>
+                                    <textarea rows="3" class="input-field w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-hydros-accent focus:ring-2 focus:ring-blue-100 outline-none resize-none" placeholder="Any other information you'd like to share..."></textarea>
+                                </div>
+
+                                <div class="flex items-start space-x-3 pt-4">
+                                    <input type="checkbox" required id="terms" class="mt-1 w-4 h-4 text-hydros-accent rounded focus:ring-hydros-accent border-gray-300">
+                                    <label for="terms" class="text-sm text-gray-600">
+                                        I confirm that the information provided is accurate and I am authorized to submit this partnership inquiry on behalf of my organization. I agree to the <a href="#" class="text-hydros-accent hover:underline">privacy policy</a> and <a href="#" class="text-hydros-accent hover:underline">terms of engagement</a>. <span class="text-red-500">*</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-6 border-t border-gray-200">
+                            <button type="submit" class="submit-btn w-full md:w-auto px-12 py-4 text-white font-bold rounded-lg shadow-lg flex items-center justify-center space-x-2 mx-auto">
+                                <span>Submit Partnership Inquiry</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                            <p class="text-center text-sm text-gray-500 mt-4">
+                                <i class="fas fa-lock mr-1"></i> Your information is securely encrypted and will never be shared with third parties.
+                            </p>
+                        </div>
+                    </form>
+
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="successMessage" class="hidden text-center py-12">
+                        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-check text-4xl text-green-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-hydros-blue mb-4">Inquiry Submitted Successfully</h3>
+                        <p class="text-gray-600 mb-8 max-w-md mx-auto">
+                            Thank you for your interest in partnering with HYDROS-C. Our partnerships team will review your proposal and contact you within 48 hours.
+                        </p>
+                        <button onclick="resetForm()" class="px-8 py-3 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">
+                            Submit Another Inquiry
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-16 bg-hydros-blue text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Prefer to Discuss Directly?</h2>
+            <p class="text-blue-100 mb-8 max-w-2xl mx-auto">
+                Our partnerships team is available for confidential discussions about strategic opportunities.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="mailto:partnerships@hydrosc.com" class="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-xl hover:bg-white/20 transition border border-white/20">
+                    <i class="fas fa-envelope text-2xl"></i>
+                    <div class="text-left">
+                        <div class="text-xs text-blue-200 uppercase tracking-wider">Email Us</div>
+                        <div class="font-semibold">partnerships@hydrosc.com</div>
+                    </div>
+                </a>
+                <a href="tel:+254700000000" class="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-8 py-4 rounded-xl hover:bg-white/20 transition border border-white/20">
+                    <i class="fas fa-phone text-2xl"></i>
+                    <div class="text-left">
+                        <div class="text-xs text-blue-200 uppercase tracking-wider">Call Us</div>
+                        <div class="font-semibold">+254 700 000 000</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    
+
+    <script>
+        // Form Handling
+        const form = document.getElementById('partnershipForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Submitting...';
+            
+            setTimeout(() => {
+                form.style.display = 'none';
+                successMessage.classList.remove('hidden');
+                successMessage.classList.add('animate-fade-in');
+            }, 1500);
+        });
+
+        function resetForm() {
+            form.reset();
+            form.style.display = 'block';
+            successMessage.classList.add('hidden');
+            const submitBtn = form.querySelector('button[type="submit"]');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span>Submit Partnership Inquiry</span><i class="fas fa-paper-plane"></i>';
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Input animation on focus
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('transform', 'scale-[1.02]');
+            });
+            input.addEventListener('blur', function() {
+                this.parentElement.classList.remove('transform', 'scale-[1.02]');
+            });
+        });
+    </script>
+</body>
+</html>
