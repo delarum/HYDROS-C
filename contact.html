@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact Us - HYDROS-C</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'hydros-blue': '#1e3a5f',
+                        'hydros-light': '#2d5a87',
+                        'hydros-accent': '#3b82f6',
+                        'hydros-mint': '#b8e6e6',
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800">
+
+    <nav class="navbar">
+    <div class="logo">
+        🌊 HYDROS-C
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="weather.html">Weather</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="involve.html" class="cta">Become Involved</a></li>
+    </ul>
+
+    <div class="menu-toggle" id="menuToggle">
+        ☰
+    </div>
+</nav>
+<script>
+const toggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
+<br> <br>
+
+    <!-- Compact Contact Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+
+            <div class=" text-center mb-12">
+                <h2 class="text-3xl font-bold text-hydros-blue mb-4">Get in Touch</h2>
+                <p class="text-lg text-gray-600">Have questions or want to collaborate? Reach out to us!</p>
+            </div>
+            <div class="max-w-md mx-auto bg-hydros-light rounded-lg shadow-lg p-8">
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-white">Name</label>
+                        <input type="text" id="name" name="name" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-hydros-accent focus:border-hydros-accent">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-white">Email</label>
+                        <input type="email" id="email" name="email" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-hydros-accent focus:border-hydros-accent">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-white">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                            class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-hydros-accent focus:border-hydros-accent"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-hydros-accent text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -241,3 +241,27 @@
     font-size: 14px;
     opacity: 0.8;
 }
+
+
+        .contact-card {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+        }
+        .input-focus:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        .submit-btn {
+            background: linear-gradient(135deg, #1e3a5f 0%, #3b82f6 100%);
+            transition: all 0.3s ease;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(30, 58, 95, 0.3);
+        }
+        .contact-icon {
+            transition: all 0.3s ease;
+        }
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: #3b82f6;
+        }
+    
