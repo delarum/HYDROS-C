@@ -1,0 +1,211 @@
+{
+  "project": "Nairobi River Basin Monitoring",
+  "organization": "HYDROS-C",
+  "location": "Nairobi River Basin, Kenya",
+  "description": "Distributed environmental monitoring network deployed to track pollution levels, ecosystem recovery, and device health across the Nairobi River Basin.",
+
+  "cycle_A": {
+    "timestamp": "2026-04-01T08:00:00Z",
+    "trackers": [
+      {
+        "tracker_id": "HYC-TRK-01",
+        "location": "Kibera Tributary",
+        "coordinates": { "lat": -1.3136, "lng": 36.7820 },
+
+        "water_visibility_cm": 38,
+        "camera_radial_obstruction_percent": 12,
+
+        "ph_level": 6.4,
+        "water_temperature_c": 22.8,
+
+        "co2_dissolved_mg_per_l": 14.3,
+        "toxic_chemical_index_ppm": 2.8,
+
+        "treatment_chemical_remaining_percent": 74,
+
+        "biological_activity_index": 0.48,
+
+        "device_status": "Operational",
+        "battery_level_percent": 82,
+
+        "last_maintenance": "2026-03-12",
+        "next_maintenance_due": "2026-04-12"
+      },
+
+      {
+        "tracker_id": "HYC-TRK-02",
+        "location": "Langata Channel",
+        "coordinates": { "lat": -1.3271, "lng": 36.8019 },
+
+        "water_visibility_cm": 41,
+        "camera_radial_obstruction_percent": 9,
+
+        "ph_level": 6.7,
+        "water_temperature_c": 23.1,
+
+        "co2_dissolved_mg_per_l": 13.6,
+        "toxic_chemical_index_ppm": 2.3,
+
+        "treatment_chemical_remaining_percent": 69,
+
+        "biological_activity_index": 0.52,
+
+        "device_status": "Operational",
+        "battery_level_percent": 79,
+
+        "last_maintenance": "2026-03-14",
+        "next_maintenance_due": "2026-04-14"
+      },
+
+      {
+        "tracker_id": "HYC-TRK-03",
+        "location": "Central Nairobi Section",
+        "coordinates": { "lat": -1.2864, "lng": 36.8172 },
+
+        "water_visibility_cm": 33,
+        "camera_radial_obstruction_percent": 18,
+
+        "ph_level": 6.1,
+        "water_temperature_c": 23.7,
+
+        "co2_dissolved_mg_per_l": 15.8,
+        "toxic_chemical_index_ppm": 3.4,
+
+        "treatment_chemical_remaining_percent": 62,
+
+        "biological_activity_index": 0.41,
+
+        "device_status": "Operational",
+        "battery_level_percent": 75,
+
+        "last_maintenance": "2026-03-10",
+        "next_maintenance_due": "2026-04-10"
+      },
+
+      {
+        "tracker_id": "HYC-TRK-04",
+        "location": "Eastleigh Basin",
+        "coordinates": { "lat": -1.2730, "lng": 36.8482 },
+
+        "water_visibility_cm": 45,
+        "camera_radial_obstruction_percent": 7,
+
+        "ph_level": 7.0,
+        "water_temperature_c": 22.3,
+
+        "co2_dissolved_mg_per_l": 11.9,
+        "toxic_chemical_index_ppm": 1.9,
+
+        "treatment_chemical_remaining_percent": 81,
+
+        "biological_activity_index": 0.59,
+
+        "device_status": "Operational",
+        "battery_level_percent": 88,
+
+        "last_maintenance": "2026-03-18",
+        "next_maintenance_due": "2026-04-18"
+      },
+
+      {
+        "tracker_id": "HYC-TRK-05",
+        "location": "Ruai Outflow",
+        "coordinates": { "lat": -1.2451, "lng": 36.9178 },
+
+        "water_visibility_cm": 52,
+        "camera_radial_obstruction_percent": 5,
+
+        "ph_level": 7.2,
+        "water_temperature_c": 21.9,
+
+        "co2_dissolved_mg_per_l": 10.4,
+        "toxic_chemical_index_ppm": 1.5,
+
+        "treatment_chemical_remaining_percent": 87,
+
+        "biological_activity_index": 0.64,
+
+        "device_status": "Operational",
+        "battery_level_percent": 91,
+
+        "last_maintenance": "2026-03-20",
+        "next_maintenance_due": "2026-04-20"
+      }
+    ]
+  },
+
+  "cycle_B": {
+    "timestamp": "2026-04-01T14:00:00Z",
+    "trackers": [
+      {
+        "tracker_id": "HYC-TRK-01",
+        "water_visibility_cm": 42,
+        "camera_radial_obstruction_percent": 10,
+        "ph_level": 6.6,
+        "water_temperature_c": 23.0,
+        "co2_dissolved_mg_per_l": 13.7,
+        "toxic_chemical_index_ppm": 2.4,
+        "treatment_chemical_remaining_percent": 70,
+        "biological_activity_index": 0.51,
+        "device_status": "Operational",
+        "battery_level_percent": 80
+      },
+
+      {
+        "tracker_id": "HYC-TRK-02",
+        "water_visibility_cm": 44,
+        "camera_radial_obstruction_percent": 8,
+        "ph_level": 6.9,
+        "water_temperature_c": 23.3,
+        "co2_dissolved_mg_per_l": 12.8,
+        "toxic_chemical_index_ppm": 2.0,
+        "treatment_chemical_remaining_percent": 65,
+        "biological_activity_index": 0.55,
+        "device_status": "Operational",
+        "battery_level_percent": 77
+      },
+
+      {
+        "tracker_id": "HYC-TRK-03",
+        "water_visibility_cm": 36,
+        "camera_radial_obstruction_percent": 15,
+        "ph_level": 6.3,
+        "water_temperature_c": 23.8,
+        "co2_dissolved_mg_per_l": 14.6,
+        "toxic_chemical_index_ppm": 3.0,
+        "treatment_chemical_remaining_percent": 59,
+        "biological_activity_index": 0.44,
+        "device_status": "Operational",
+        "battery_level_percent": 72
+      },
+
+      {
+        "tracker_id": "HYC-TRK-04",
+        "water_visibility_cm": 47,
+        "camera_radial_obstruction_percent": 6,
+        "ph_level": 7.1,
+        "water_temperature_c": 22.4,
+        "co2_dissolved_mg_per_l": 11.2,
+        "toxic_chemical_index_ppm": 1.6,
+        "treatment_chemical_remaining_percent": 78,
+        "biological_activity_index": 0.61,
+        "device_status": "Operational",
+        "battery_level_percent": 85
+      },
+
+      {
+        "tracker_id": "HYC-TRK-05",
+        "water_visibility_cm": 55,
+        "camera_radial_obstruction_percent": 4,
+        "ph_level": 7.3,
+        "water_temperature_c": 22.1,
+        "co2_dissolved_mg_per_l": 9.8,
+        "toxic_chemical_index_ppm": 1.2,
+        "treatment_chemical_remaining_percent": 84,
+        "biological_activity_index": 0.67,
+        "device_status": "Operational",
+        "battery_level_percent": 89
+      }
+    ]
+  }
+}
