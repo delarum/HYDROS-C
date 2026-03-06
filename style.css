@@ -346,3 +346,94 @@
     font-size: 1.1rem;
   }
 }
+
+.projects-section{
+    padding:80px 10%;
+    background: linear-gradient(180deg,#e6f5f6,#d9eef0);
+    font-family: "Segoe UI", sans-serif;
+}
+
+.projects-header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.projects-header h2{
+    font-size:38px;
+    margin-bottom:10px;
+    letter-spacing:1px;
+}
+
+.projects-header p{
+    color:#4b6b74;
+    max-width:700px;
+    margin:auto;
+}
+
+.tracker-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+/* tracker card */
+
+.tracker-card{
+
+    background:rgba(255,255,255,0.35);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    border-radius:18px;
+    padding:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    transition:0.4s;
+    animation:fadeUp 0.8s ease;
+}
+
+.tracker-card:hover{
+    transform:translateY(-8px);
+}
+
+.tracker-title{
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.data-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+    margin:6px 0;
+}
+
+.status{
+    margin-top:15px;
+    font-weight:600;
+}
+
+.good{
+    color:#27ae60;
+}
+
+.warning{
+    color:#f39c12;
+}
+
+.danger{
+    color:#e74c3c;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}

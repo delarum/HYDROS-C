@@ -56,5 +56,95 @@ toggle.addEventListener("click", () => {
 
 </section>
 
+<script>
+
+let currentCycle = "cycle_A"
+
+async function loadTrackers(){
+
+    const res = await fetch("hydros_trackers.json")
+    const data = await res.json()
+
+    const trackers = data[currentCycle].trackers
+
+    const container = document.getElementById("trackerGrid")
+
+    container.innerHTML = ""
+
+    trackers.forEach(tracker => {
+
+        const statusClass =
+            tracker.toxic_chemical_index_ppm > 3 ? "danger" :
+            tracker.toxic_chemical_index_ppm > 2 ? "warning" : "good"
+
+        const card = document.createElement("div")
+
+        card.classList.add("tracker-card")
+
+        card.innerHTML = `
+
+        <div class="tracker-title">${tracker.tracker_id}</div>
+
+        <div class="data-row">
+        <span>Visibility</span>
+        <span>${tracker.water_visibility_cm} cm</span>
+        </div>
+
+        <div class="data-row">
+        <span>Camera Obstruction</span>
+        <span>${tracker.camera_radial_obstruction_percent}%</span>
+        </div>
+
+        <div class="data-row">
+        <span>pH</span>
+        <span>${tracker.ph_level}</span>
+        </div>
+
+        <div class="data-row">
+        <span>Temperature</span>
+        <span>${tracker.water_temperature_c}°C</span>
+        </div>
+
+        <div class="data-row">
+        <span>CO₂ Level</span>
+        <span>${tracker.co2_dissolved_mg_per_l} mg/L</span>
+        </div>
+
+        <div class="data-row">
+        <span>Toxic Chemicals</span>
+        <span>${tracker.toxic_chemical_index_ppm} ppm</span>
+        </div>
+
+        <div class="data-row">
+        <span>Treatment Chemical</span>
+        <span>${tracker.treatment_chemical_remaining_percent}%</span>
+        </div>
+
+        <div class="data-row">
+        <span>Battery</span>
+        <span>${tracker.battery_level_percent}%</span>
+        </div>
+
+        <div class="status ${statusClass}">
+        Device Status: ${tracker.device_status}
+        </div>
+
+        `
+
+        container.appendChild(card)
+
+    })
+
+
+    currentCycle = currentCycle === "cycle_A" ? "cycle_B" : "cycle_A"
+
+}
+
+loadTrackers()
+
+setInterval(loadTrackers,8000)
+
+</script>
+
 </body>
 </html>
