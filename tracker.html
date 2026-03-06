@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
+<!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+    
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+        🌊 HYDROS-C
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="weather.html">Weather</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="involve.html" class="cta">Become Involved</a></li>
+    </ul>
+
+    <div class="menu-toggle" id="menuToggle">
+        ☰
+    </div>
+</nav>
+<script>
+const toggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+</script>
+
+<section class="projects-section">
+
+    <div class="projects-header">
+        <h2>Hydros-C Live Monitoring Systems</h2>
+        <p>
+            Our distributed environmental trackers continuously analyze water health
+            across the Nairobi River Basin. Sensors monitor pollution levels,
+            ecosystem activity, and treatment progress in real time.
+        </p>
+    </div>
+
+    <div id="trackerGrid" class="tracker-grid"></div>
+
+</section>
+
+</body>
+</html>
