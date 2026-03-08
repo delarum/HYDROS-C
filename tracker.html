@@ -1,153 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Home Page</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-<!-- Leaflet Map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-    
+
 </head>
+
 <body>
     <nav class="navbar">
-    <div class="logo">
-        🌊 HYDROS-C
-    </div>
+        <div class="logo">
+            🌊 HYDROS-C
+        </div>
 
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="weather.html">Weather</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="involve.html" class="cta">Become Involved</a></li>
-    </ul>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="involve.html" class="cta">Become Involved</a></li>
+        </ul>
 
-    <div class="menu-toggle" id="menuToggle">
-        ☰
-    </div>
-</nav>
-<script>
-const toggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+        <div class="menu-toggle" id="menuToggle">
+            ☰
+        </div>
+    </nav>
+    <script>
+        const toggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
 
-toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-</script>
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
 
-<section class="projects-section">
+    <section class="projects-section">
 
-    <div class="projects-header">
-        <h2>Hydros-C Live Monitoring Systems</h2>
-        <p>
-            Our distributed environmental trackers continuously analyze water health
-            across the Nairobi River Basin. Sensors monitor pollution levels,
-            ecosystem activity, and treatment progress in real time.
-        </p>
-    </div>
-
-    <div id="trackerGrid" class="tracker-grid"></div>
-
-</section>
-
-<footer class="footer">
-
-    <div class="footer-container">
-
-        <!-- Company Info -->
-        <div class="footer-section">
-            <h2 class="footer-logo">🌊 HYDROS-C</h2>
+        <div class="projects-header">
+            <h2>Hydros-C Live Monitoring Systems</h2>
             <p>
-                Leading large-scale water body cleaning and environmental 
-                restoration solutions. Protecting oceans, lakes, and rivers 
-                for a sustainable future.
+                Our distributed environmental trackers continuously analyze water health
+                across the Nairobi River Basin. Sensors monitor pollution levels,
+                ecosystem activity, and treatment progress in real time.
             </p>
         </div>
 
-        <!-- Quick Links -->
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="partner.html">Partnership</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="tracker.html">Devices</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+        <div id="trackerGrid" class="tracker-grid"></div>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- Company Info -->
+            <div class="footer-section">
+                <h2 class="footer-logo">🌊 HYDROS-C</h2>
+                <p>
+                    Leading large-scale water body cleaning and environmental
+                    restoration solutions. Protecting oceans, lakes, and rivers
+                    for a sustainable future.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="partner.html">Partnership</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="tracker.html">Devices</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section">
+                <h3>Our Expertise</h3>
+                <ul>
+                    <li>Ocean Waste Removal</li>
+                    <li>Lake Restoration</li>
+                    <li>Oil Spill Cleanup</li>
+                    <li>Industrial Water Treatment</li>
+                    <li>Marine Ecosystem Protection</li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@hydrosc.com</p>
+                <p>Phone: +254 700 000 000</p><br>
+                <h3>Office Locations</h3>
+                <p>Nairobi, Kenya</p>
+                <p>Kigali, Rwanda</p>
+                <P>Dakar, Senegal</P>
+            </div>
+
         </div>
 
-        <!-- Services -->
-        <div class="footer-section">
-            <h3>Our Expertise</h3>
-            <ul>
-                <li>Ocean Waste Removal</li>
-                <li>Lake Restoration</li>
-                <li>Oil Spill Cleanup</li>
-                <li>Industrial Water Treatment</li>
-                <li>Marine Ecosystem Protection</li>
-            </ul>
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            © 2026 HYDROS-C. All rights reserved.
         </div>
 
-        <!-- Contact -->
-        <div class="footer-section">
-            <h3>Contact</h3>
-            <p>Email: info@hydrosc.com</p>
-            <p>Phone: +254 700 000 000</p><br>
-            <h3>Office Locations</h3>
-            <p>Nairobi, Kenya</p>
-            <p>Kigali, Rwanda</p>
-            <P>Dakar, Senegal</P>
-        </div>
+    </footer>
 
-    </div>
+    <script>
 
-    <!-- Bottom Bar -->
-    <div class="footer-bottom">
-        © 2026 HYDROS-C. All rights reserved.
-    </div>
+        let currentCycle = "cycle_A";
 
-</footer>
+        async function loadTrackers() {
 
-<script>
+            try {
 
-let currentCycle = "cycle_A";
+                const res = await fetch("hydros_trackers.json");
 
-async function loadTrackers(){
+                if (!res.ok) {
+                    throw new Error("JSON file not found");
+                }
 
-try{
+                const data = await res.json();
 
-const res = await fetch("hydros_trackers.json");
+                const trackers = data[currentCycle].trackers;
 
-if(!res.ok){
-throw new Error("JSON file not found");
-}
+                const container = document.getElementById("trackerGrid");
 
-const data = await res.json();
+                container.innerHTML = "";
 
-const trackers = data[currentCycle].trackers;
+                trackers.forEach(tracker => {
 
-const container = document.getElementById("trackerGrid");
+                    const statusClass =
+                        tracker.toxic_chemical_index_ppm > 3 ? "danger" :
+                            tracker.toxic_chemical_index_ppm > 2 ? "warning" :
+                                "good";
 
-container.innerHTML = "";
+                    const card = document.createElement("div");
 
-trackers.forEach(tracker => {
+                    card.classList.add("tracker-card");
 
-const statusClass =
-tracker.toxic_chemical_index_ppm > 3 ? "danger" :
-tracker.toxic_chemical_index_ppm > 2 ? "warning" :
-"good";
-
-const card = document.createElement("div");
-
-card.classList.add("tracker-card");
-
-card.innerHTML = `
+                    card.innerHTML = `
 
 <div class="tracker-title">${tracker.tracker_id}</div>
 
@@ -197,23 +199,24 @@ Device Status: ${tracker.device_status}
 
 `;
 
-container.appendChild(card);
+                    container.appendChild(card);
 
-});
+                });
 
-currentCycle = currentCycle === "cycle_A" ? "cycle_B" : "cycle_A";
+                currentCycle = currentCycle === "cycle_A" ? "cycle_B" : "cycle_A";
 
-}
+            }
 
-catch(error){
-console.error("Error loading tracker data:", error);
-}
+            catch (error) {
+                console.error("Error loading tracker data:", error);
+            }
 
-}
+        }
 
-loadTrackers();
-setInterval(loadTrackers,8000);
-</script>
+        loadTrackers();
+        setInterval(loadTrackers, 8000);
+    </script>
 
 </body>
+
 </html>

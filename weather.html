@@ -1,99 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Home Page</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-<!-- Leaflet Map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-    
+    <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-<script src="https://unpkg.com/leaflet-velocity/dist/leaflet-velocity.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-    
+    <script src="https://unpkg.com/leaflet-velocity/dist/leaflet-velocity.min.js"></script>
+
+
 </head>
+
 <body>
     <nav class="navbar">
-    <div class="logo">
-        🌊 HYDROS-C
-    </div>
+        <div class="logo">
+            🌊 HYDROS-C
+        </div>
 
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="weather.html">Weather</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="involve.html" class="cta">Become Involved</a></li>
-    </ul>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="involve.html" class="cta">Become Involved</a></li>
+        </ul>
 
-    <div class="menu-toggle" id="menuToggle">
-        ☰
-    </div>
-</nav>
-<script>
-const toggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+        <div class="menu-toggle" id="menuToggle">
+            ☰
+        </div>
+    </nav>
+    <script>
+        const toggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
 
-toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-</script>
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
 
-<section class="weather-section">
+    <section class="weather-section">
 
-<div class="weather-header">
-<h2>Nairobi Environmental Weather Monitoring</h2>
-<p>
-Real-time atmospheric conditions across HYDROS-C tracker locations.
-Weather conditions influence water pollution spread, oxygen levels,
-and ecosystem recovery in the Nairobi River Basin.
-</p>
-</div>
+        <div class="weather-header">
+            <h2>Nairobi Environmental Weather Monitoring</h2>
+            <p>
+                Real-time atmospheric conditions across HYDROS-C tracker locations.
+                Weather conditions influence water pollution spread, oxygen levels,
+                and ecosystem recovery in the Nairobi River Basin.
+            </p>
+        </div>
 
-<div class="weather-grid" id="weatherGrid"></div>
+        <div class="weather-grid" id="weatherGrid"></div>
 
-</section>
+    </section>
 
-<script>
+    <script>
 
-const locations = [
+        const locations = [
 
-{ name:"Westlands", lat:-1.2676, lon:36.8108 },
-{ name:"Kamkunji", lat:-1.2816, lon:36.8422 },
-{ name:"Embakasi", lat:-1.3190, lon:36.9278 },
-{ name:"Starehe", lat:-1.2833, lon:36.8167 },
-{ name:"Kasarani", lat:-1.2210, lon:36.8970 }
+            { name: "Westlands", lat: -1.2676, lon: 36.8108 },
+            { name: "Kamkunji", lat: -1.2816, lon: 36.8422 },
+            { name: "Embakasi", lat: -1.3190, lon: 36.9278 },
+            { name: "Starehe", lat: -1.2833, lon: 36.8167 },
+            { name: "Kasarani", lat: -1.2210, lon: 36.8970 }
 
-];
+        ];
 
-async function loadWeather(){
+        async function loadWeather() {
 
-const container = document.getElementById("weatherGrid");
+            const container = document.getElementById("weatherGrid");
 
-container.innerHTML = "";
+            container.innerHTML = "";
 
-for(const loc of locations){
+            for (const loc of locations) {
 
-const url = `https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current_weather=true&hourly=relativehumidity_2m,cloudcover,windspeed_10m`;
+                const url = `https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current_weather=true&hourly=relativehumidity_2m,cloudcover,windspeed_10m`;
 
-const res = await fetch(url);
+                const res = await fetch(url);
 
-const data = await res.json();
+                const data = await res.json();
 
-const weather = data.current_weather;
+                const weather = data.current_weather;
 
-const card = document.createElement("div");
+                const card = document.createElement("div");
 
-card.classList.add("weather-card");
+                card.classList.add("weather-card");
 
-card.innerHTML = `
+                card.innerHTML = `
 
 <div class="weather-location">${loc.name}</div>
 
@@ -118,17 +120,18 @@ card.innerHTML = `
 
 `;
 
-container.appendChild(card);
+                container.appendChild(card);
 
-}
+            }
 
-}
+        }
 
-loadWeather();
+        loadWeather();
 
-setInterval(loadWeather,600000);
+        setInterval(loadWeather, 600000);
 
-</script>
+    </script>
 
 </body>
+
 </html>

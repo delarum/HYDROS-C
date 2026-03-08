@@ -1,133 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Home Page</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-<!-- Leaflet Map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-    
+
 </head>
+
 <body>
     <nav class="navbar">
-    <div class="logo">
-        🌊 HYDROS-C
-    </div>
+        <div class="logo">
+            🌊 HYDROS-C
+        </div>
 
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="weather.html">Weather</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="involve.html" class="cta">Become Involved</a></li>
-    </ul>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="involve.html" class="cta">Become Involved</a></li>
+        </ul>
 
-    <div class="menu-toggle" id="menuToggle">
-        ☰
-    </div>
-</nav>
-<script>
-const toggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+        <div class="menu-toggle" id="menuToggle">
+            ☰
+        </div>
+    </nav>
+    <script>
+        const toggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
 
-toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-</script>
-<br> <br>
+        toggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
 
+    <!-- HERO SECTIION -->
     <section class="hero">
-    <h1 data-aos="fade-up" >Protecting Our Life</h1>
-    <p data-aos="fade-up" data-aos-delay="200" >
-        HYDROS-C deploys intelligent water tracking systems across 
-        major river basins and coastal areas to monitor pollution and ecosystem health.
-    </p>
-     <a href="tracker.html" class="cta"> View Live Tracking</a>
-</section>
+        <h1 data-aos="fade-up">Protecting Our Life</h1>
+        <p data-aos="fade-up" data-aos-delay="200">
+            HYDROS-C deploys intelligent water tracking systems across
+            major lake beds, river basins and coastal areas to monitor pollution and ecosystem health.
+        </p>
+        <a href="tracker.html" class="cta"> View Live Tracking</a>
+    </section>
 
-<br><br>
-<!-- ================= MAP ================= -->
-<section class="map-section">
-    <h2 data-aos="fade-up" class="text-3xl bold">The Nairobi River Basin Monitoring Map</h2>
-    <br>
-    <div id="map" data-aos="zoom-in" data-aos-delay="200"></div>
-    <br>
-    <p>Our current project is focused on the regeneration of the Nairobi River Basin and its tributaries. We are deploying all our resourses in partnership with the Nairobi County Government and several NGOs to monitor, treat, restore an put further measures preventing the further degradation of this once glorious river basin.  
-         </p>
-</section>
+    <br><br>
+    <!-- ================= MAP ================= -->
+    <section class="map-section">
+        <h2 data-aos="fade-up" class="text-3xl bold">The Nairobi River Basin Monitoring Map</h2>
+        <br>
+        <div id="map" data-aos="zoom-in" data-aos-delay="200"></div>
+        <br>
+        <p>Our current project is focused on the regeneration of the Nairobi River Basin and its tributaries. We are
+            deploying all our resourses in partnership with the Nairobi County Government and several NGOs to monitor,
+            treat, restore an put further measures preventing the further degradation of this once glorious river basin.
+        </p>
+    </section>
 
 
-<footer class="footer">
+    <footer class="footer">
 
-    <div class="footer-container">
+        <div class="footer-container">
 
-        <!-- Company Info -->
-        <div class="footer-section">
-            <h2 class="footer-logo">🌊 HYDROS-C</h2>
-            <p>
-                Leading large-scale water body cleaning and environmental 
-                restoration solutions. Protecting oceans, lakes, and rivers 
-                for a sustainable future.
-            </p>
+            <!-- Company Info -->
+            <div class="footer-section">
+                <h2 class="footer-logo">🌊 HYDROS-C</h2>
+                <p>
+                    Leading large-scale water body cleaning and environmental
+                    restoration solutions. Protecting oceans, lakes, and rivers
+                    for a sustainable future.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="partner.html">Partnership</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="tracker.html">Devices</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-section">
+                <h3>Our Expertise</h3>
+                <ul>
+                    <li>Ocean Waste Removal</li>
+                    <li>Lake Restoration</li>
+                    <li>Oil Spill Cleanup</li>
+                    <li>Industrial Water Treatment</li>
+                    <li>Marine Ecosystem Protection</li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: info@hydrosc.com</p>
+                <p>Phone: +254 700 000 000</p><br>
+                <h3>Office Locations</h3>
+                <p>Nairobi, Kenya</p>
+                <p>Kigali, Rwanda</p>
+                <P>Dakar, Senegal</P>
+            </div>
+
         </div>
 
-        <!-- Quick Links -->
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="partner.html">Partnership</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="tracker.html">Devices</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            © 2026 HYDROS-C. All rights reserved.
         </div>
 
-        <!-- Services -->
-        <div class="footer-section">
-            <h3>Our Expertise</h3>
-            <ul>
-                <li>Ocean Waste Removal</li>
-                <li>Lake Restoration</li>
-                <li>Oil Spill Cleanup</li>
-                <li>Industrial Water Treatment</li>
-                <li>Marine Ecosystem Protection</li>
-            </ul>
-        </div>
+    </footer>
+    <!-- Leaflet JS FIRST -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-        <!-- Contact -->
-        <div class="footer-section">
-            <h3>Contact</h3>
-            <p>Email: info@hydrosc.com</p>
-            <p>Phone: +254 700 000 000</p><br>
-            <h3>Office Locations</h3>
-            <p>Nairobi, Kenya</p>
-            <p>Kigali, Rwanda</p>
-            <P>Dakar, Senegal</P>
-        </div>
+    <!-- AOS JS SECOND -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-    </div>
+    <!-- YOUR SCRIPT LAST -->
+    <script src="hydros.js"></script>
 
-    <!-- Bottom Bar -->
-    <div class="footer-bottom">
-        © 2026 HYDROS-C. All rights reserved.
-    </div>
-
-</footer>
-<!-- Leaflet JS FIRST -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-<!-- AOS JS SECOND -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<!-- YOUR SCRIPT LAST -->
-<script src="hydros.js"></script>
-    
 </body>
+
 </html>

@@ -1,10 +1,11 @@
-document.addEventListener("DOMContentLoaded", function() {
+// run code after HTML finishes loading(event propagation)
+document.addEventListener("DOMContentLoaded", function () {
 
-    // Only run AOS if it exists
+    // Only run AOS animation library if it exists
     if (typeof AOS !== "undefined") {
         AOS.init();
     }
-
+    //create a map container/object that is L.map to hold the tiles
     const map = L.map('map').setView([-1.2833, 36.8167], 13);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -13,89 +14,81 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
 
-// ==========================
 // INIT AOS ANIMATIONS
-// ==========================
 AOS.init();
 
 
-// ==========================
-// INITIALIZE LEAFLET MAP
-// ==========================
-const map = L.map('map').setView([-1.2833, 36.8167], 13);
+const map = L.map('map').setView([-1.2833, 36.8167], 13);// view of the whole map
 
-// Water-toned base map
+// add leaflet line to display map on page website, tilelayer places map tiles to make up the whole map
+// FETCH MAP TILES FROM OPEN STREETMAP
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
+    attribution: '&copy; OpenStreetMap contributors'//ADD credits to the map
 }).addTo(map);
 
 
-// ==========================
-// NAIROBI RIVER PATH
-// ==========================
+// NAIROBI RIVER PATH using coordinates
 const riverPath = [
-    [-1.260, 36.850],
-    [-1.270, 36.840],
-    [-1.280, 36.830],
-    [-1.290, 36.820],
-    [-1.300, 36.810],
-    [-1.310, 36.800]
+    [-1.237106, 36.895650],
+    [-1.259893, 36.884770],
+    [-1.271126, 36.807256],
+    [-1.285189, 36.836010],
+    [-1.287008, 36.844432],
+    [-1.288827, 36.852854],
+
+
 ];
 
 const riverLine = L.polyline(riverPath, {
     color: "#1B4965",
-    weight: 6,
+    weight: 5,
     opacity: 0.85
 }).addTo(map);
 
 
-// ==========================
-// FIVE TRACKERS
-// ==========================
+// FIVE TRACKERS content
 const trackers = [
-    { 
-        name: "Source Zone Sensor", 
-        coords: [-1.260, 36.850], 
-        status: "Excellent",
-        ph: 7.1,
+    {
+        name: "KASARANI HYC-TRK-01",
+        coords: [-1.237106, 36.895650],
+        status: "Moderate pollution",
+        ph: 6.4,
         turbidity: "Low"
     },
-    { 
-        name: "Residential Area Sensor", 
-        coords: [-1.275, 36.835], 
-        status: "Good",
-        ph: 6.8,
+    {
+        name: "EMBAKASI HYC-TRK-02",
+        coords: [-1.259893, 36.884770],
+        status: "Moderate Pollution",
+        ph: 6.9,
         turbidity: "Moderate"
     },
-    { 
-        name: "CBD Monitoring Station", 
-        coords: [-1.290, 36.820], 
-        status: "Moderate Pollution",
+    {
+        name: "CHIROMO HYC-TRK-03",
+        coords: [-1.271126, 36.807256],
+        status: "High Pollution",
         ph: 6.4,
         turbidity: "High"
     },
-    { 
-        name: "Industrial Zone Sensor", 
-        coords: [-1.300, 36.810], 
-        status: "High Pollution",
+    {
+        name: "STAREHE HYC-TRK-04",
+        coords: [-1.285189, 36.836010],
+        status: "Morderate Pollution",
         ph: 5.9,
         turbidity: "Very High"
     },
-    { 
-        name: "Downstream Exit Sensor", 
-        coords: [-1.310, 36.800], 
-        status: "Recovering",
+    {
+        name: "KAMKUNJI HYC-TRK-05",
+        coords: [-1.287008, 36.844432],
+        status: "Low Pollution",
         ph: 6.6,
         turbidity: "Moderate"
     }
 ];
 
 
-// ==========================
-// COLOR FUNCTION
-// ==========================
+// COLORS
 function getColor(status) {
-    if (status === "Excellent") return "#2ECC71";
+    if (status === "Low Pollution") return "#2ECC71";
     if (status === "Good") return "#3498DB";
     if (status === "Moderate Pollution") return "#F39C12";
     if (status === "High Pollution") return "#E74C3C";
@@ -103,9 +96,8 @@ function getColor(status) {
 }
 
 
-// ==========================
 // ADD TRACKERS TO MAP
-// ==========================
+
 trackers.forEach(tracker => {
 
     const marker = L.circleMarker(tracker.coords, {
@@ -127,11 +119,10 @@ trackers.forEach(tracker => {
 });
 
 
-// ==========================
-// SMOOTH MAP FLY-IN EFFECT
-// ==========================
+// FLY-IN EFFECT
+
 setTimeout(() => {
-    map.flyTo([-1.290, 36.820], 14, {
+    map.flyTo([-1.2560, 36.8572], 13, {
         duration: 3
     });
 }, 1500);

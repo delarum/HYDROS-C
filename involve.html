@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,57 +38,72 @@
             background-color: #e6f5f6;
             color: #f8fafc;
         }
-        
+
         .glass-panel {
-            background:#ADDADC;
+            background: #ADDADC;
             -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, #1B4965, #4A90E2);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .input-clean {
             background: white;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.2s ease;
         }
-        
+
         .input-clean:focus {
             outline: none;
             border-color: #1B4965;
             box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
         }
-        
+
         .tab-active {
             background: linear-gradient(135deg, #1B4965, #4A90E2);
             color: white;
         }
-        
+
         .reward-pulse {
             animation: pulse-subtle 2s infinite;
         }
-        
+
         @keyframes pulse-subtle {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
         }
-        
+
         .section-fade {
             animation: fadeIn 0.4s ease-out;
         }
-        
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
+
 <body class="min-h-screen antialiased">
 
     <!-- Navigation -->
@@ -104,57 +120,60 @@
                     </div>
                 </div> -->
 
-                <nav class="navbar">
-    <div class="logo">
-        🌊 HYDROS-C
-    </div>
+    <nav class="navbar">
+        <div class="logo">
+            🌊 HYDROS-C
+        </div>
 
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="weather.html">Weather</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="involve.html" class="cta">Become Involved</a></li>
-    </ul>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="involve.html" class="cta">Become Involved</a></li>
+        </ul>
 
-    <div class="menu-toggle" id="menuToggle">
-        ☰
-    </div>
+        <div class="menu-toggle" id="menuToggle">
+            ☰
+        </div>
 
-<script>
-const toggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+        <script>
+            const toggle = document.getElementById("menuToggle");
+            const navLinks = document.getElementById("navLinks");
 
-toggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-</script>
-                
-                <div id="userSection" class="hidden items-center gap-6">
-                    <div class="text-right">
-                        <p id="userName" class="text-sm font-medium text-white"></p>
-                        <p id="userPoints" class="text-xs text-brand-400">0 Impact Points</p>
-                    </div>
-                    <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-sm font-semibold text-white" id="userAvatar"></div>
-                    <button onclick="logout()" class="text-slate-400 hover:text-white transition-colors">
-                        <i class="fas fa-sign-out-alt"></i>
-                    </button>
-                </div>
-                
-                <button id="loginBtn" onclick="openModal()" class="px-5 py-2.5 bg-brand-500 hover:bg-brand-400 text-white text-sm font-medium rounded-lg transition-colors">
-                    Sign In
-                </button>
+            toggle.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        </script>
+
+        <div id="userSection" class="hidden items-center gap-6">
+            <div class="text-right">
+                <p id="userName" class="text-sm font-medium text-white"></p>
+                <p id="userPoints" class="text-xs text-brand-400">0 Impact Points</p>
             </div>
+            <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-sm font-semibold text-white"
+                id="userAvatar"></div>
+            <button onclick="logout()" class="text-slate-400 hover:text-white transition-colors">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+
+        <button id="loginBtn" onclick="openModal()"
+            class="px-5 py-2.5 bg-brand-500 hover:bg-brand-400 text-white text-sm font-medium rounded-lg transition-colors">
+            Sign In
+        </button>
+        </div>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="pt-32 pb-24 px-6 lg:px-8 max-w-7xl mx-auto">
-        
+
         <!-- Header -->
         <div class="text-center mb-20 section-fade">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-sm mb-8">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-sm mb-8">
                 <i class="fas fa-shield-alt text-xs"></i>
                 <span>Secure & Anonymous Reporting</span>
             </div>
@@ -162,7 +181,7 @@ toggle.addEventListener("click", () => {
                 Be a <span class="gradient-text font-semibold">Water Guardian</span>
             </h2>
             <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                Join thousands of citizens protecting Africa's water bodies. Report pollution incidents securely, 
+                Join thousands of citizens protecting Africa's water bodies. Report pollution incidents securely,
                 earn verified rewards, and contribute to environmental innovation.
             </p>
         </div>
@@ -170,15 +189,18 @@ toggle.addEventListener("click", () => {
         <!-- Tab Navigation -->
         <div class="flex justify-center mb-16">
             <div class="inline-flex p-1.5 bg-slate-800/50 rounded-xl border border-white/5">
-                <button onclick="switchTab('report')" id="tab-report" class="tab-active px-6 py-3 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                <button onclick="switchTab('report')" id="tab-report"
+                    class="tab-active px-6 py-3 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
                     <i class="fas fa-exclamation-triangle"></i>
                     Report Incident
                 </button>
-                <button onclick="switchTab('innovate')" id="tab-innovate" class="px-6 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-white transition-all flex items-center gap-2">
+                <button onclick="switchTab('innovate')" id="tab-innovate"
+                    class="px-6 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-white transition-all flex items-center gap-2">
                     <i class="fas fa-lightbulb"></i>
                     Innovation Lab
                 </button>
-                <button onclick="switchTab('rewards')" id="tab-rewards" class="px-6 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-white transition-all flex items-center gap-2">
+                <button onclick="switchTab('rewards')" id="tab-rewards"
+                    class="px-6 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-white transition-all flex items-center gap-2">
                     <i class="fas fa-trophy"></i>
                     My Rewards
                 </button>
@@ -188,10 +210,10 @@ toggle.addEventListener("click", () => {
         <!-- Report Section -->
         <section id="section-report" class="section-fade">
             <div class="grid lg:grid-cols-12 gap-8">
-                
+
                 <!-- Main Form -->
                 <div class="lg:col-span-8 space-y-8">
-                    
+
                     <!-- Form Card -->
                     <div class="glass-panel rounded-2xl p-8 lg:p-10">
                         <div class="flex items-start justify-between mb-10">
@@ -199,7 +221,8 @@ toggle.addEventListener("click", () => {
                                 <h3 class="text-2xl font-semibold text-white mb-2">Submit Incident Report</h3>
                                 <p class="text-slate-400">Help identify toxic waste and illegal dumping activities</p>
                             </div>
-                            <div class="flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm font-medium reward-pulse">
+                            <div
+                                class="flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm font-medium reward-pulse">
                                 <i class="fas fa-coins"></i>
                                 <span>Reward up to $500</span>
                             </div>
@@ -209,34 +232,40 @@ toggle.addEventListener("click", () => {
                         <div class="mb-10 p-6 bg-slate-800/30 rounded-xl border border-white/5">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="text-sm font-medium text-white">Submit Anonymously</span>
-                                <button onclick="toggleAnon()" id="anonToggle" class="w-12 h-6 bg-brand-500 rounded-full relative transition-colors">
-                                    <div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-all"></div>
+                                <button onclick="toggleAnon()" id="anonToggle"
+                                    class="w-12 h-6 bg-brand-500 rounded-full relative transition-colors">
+                                    <div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-all">
+                                    </div>
                                 </button>
                             </div>
                             <p class="text-sm text-slate-800 leading-relaxed">
-                                Your identity is encrypted and protected under our Whistleblower Protection Policy. 
+                                Your identity is encrypted and protected under our Whistleblower Protection Policy.
                                 Anonymous reporters receive rewards via secure payment channels.
                             </p>
                         </div>
 
                         <form onsubmit="submitReport(event)" class="space-y-8">
-                            
+
                             <!-- Row 1 -->
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div class="space-y-2">
                                     <label class="text-sm font-medium text-slate-800">Incident Type</label>
-                                    <select title="report-type" required class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 appearance-none cursor-pointer">
+                                    <select title="report-type" required
+                                        class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 appearance-none cursor-pointer">
                                         <option value="" class="bg-slate-300">Select type</option>
                                         <option value="toxic" class="bg-slate-300">Toxic Chemical Spillage</option>
-                                        <option value="industrial" class="bg-slate-300">Industrial Waste Dumping</option>
-                                        <option value="plastic" class="bg-slate-300">Plastic/Garbage Accumulation</option>
+                                        <option value="industrial" class="bg-slate-300">Industrial Waste Dumping
+                                        </option>
+                                        <option value="plastic" class="bg-slate-300">Plastic/Garbage Accumulation
+                                        </option>
                                         <option value="oil" class="bg-slate-300">Oil/Hydrocarbon Leak</option>
                                         <option value="sewage" class="bg-slate-300">Raw Sewage Discharge</option>
                                     </select>
                                 </div>
                                 <div class="space-y-2">
                                     <label class="text-sm font-medium text-slate-800">Water Body</label>
-                                    <select title="large-waterbody" required class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 appearance-none cursor-pointer">
+                                    <select title="large-waterbody" required
+                                        class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 appearance-none cursor-pointer">
                                         <option value="" class="bg-slate-300">Select location</option>
                                         <option value="victoria" class="bg-slate-300">Lake Victoria</option>
                                         <option value="nairobi" class="bg-slate-300">Nairobi River</option>
@@ -253,10 +282,12 @@ toggle.addEventListener("click", () => {
                             <div class="space-y-2">
                                 <label class="text-sm font-medium text-slate-800">Specific Location</label>
                                 <div class="relative">
-                                    <input type="text" required placeholder="Enter address or GPS coordinates" 
+                                    <input type="text" required placeholder="Enter address or GPS coordinates"
                                         class="input-clean w-full px-4 py-3.5 pl-11 rounded-lg text-gray-800 placeholder-slate-500">
-                                    <i class="fas fa-map-marker-alt absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"></i>
-                                    <button type="button" onclick="getLocation()" class="absolute right-3 top-1/2 -translate-y-1/2 text-xs bg-slate-700 hover:bg-slate-600 text-brand-400 px-3 py-1.5 rounded-md transition-colors">
+                                    <i
+                                        class="fas fa-map-marker-alt absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                                    <button type="button" onclick="getLocation()"
+                                        class="absolute right-3 top-1/2 -translate-y-1/2 text-xs bg-slate-700 hover:bg-slate-600 text-brand-400 px-3 py-1.5 rounded-md transition-colors">
                                         Use GPS
                                     </button>
                                 </div>
@@ -265,17 +296,20 @@ toggle.addEventListener("click", () => {
                             <!-- Description -->
                             <div class="space-y-2">
                                 <label class="text-sm font-medium text-slate-800">Incident Description</label>
-                                <textarea required rows="5" placeholder="Describe what you observed, including approximate time, responsible parties if known, and extent of pollution..." 
+                                <textarea required rows="5"
+                                    placeholder="Describe what you observed, including approximate time, responsible parties if known, and extent of pollution..."
                                     class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 placeholder-slate-500 resize-none"></textarea>
                             </div>
 
                             <!-- Evidence Upload -->
                             <div class="space-y-2">
                                 <label class="text-sm font-medium text-slate-300">Evidence Upload</label>
-                                <div onclick="document.getElementById('fileInput').click()" 
+                                <div onclick="document.getElementById('fileInput').click()"
                                     class="border-2 border-dashed border-slate-700 hover:border-brand-500/50 rounded-xl p-10 text-center cursor-pointer transition-colors bg-slate-800/20">
-                                    <input title="fileinput" type="file" id="fileInput" multiple accept="image/*,video/*" class="hidden" onchange="handleFiles(this)">
-                                    <div class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <input title="fileinput" type="file" id="fileInput" multiple
+                                        accept="image/*,video/*" class="hidden" onchange="handleFiles(this)">
+                                    <div
+                                        class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
                                         <i class="fas fa-cloud-upload-alt text-2xl text-brand-400"></i>
                                     </div>
                                     <p class="text-white font-medium mb-1">Drop files or click to upload</p>
@@ -287,28 +321,35 @@ toggle.addEventListener("click", () => {
                             <!-- Responsible Party -->
                             <div class="p-6 bg-slate-800/20 rounded-xl border border-white/5">
                                 <label class="flex items-center gap-3 cursor-pointer mb-4">
-                                    <input type="checkbox" onchange="toggleCompany(this)" class="w-5 h-5 rounded border-slate-600 bg-slate-800 text-brand-500 focus:ring-brand-500">
-                                    <span class="text-sm text-slate-800">I know the responsible company/individual</span>
+                                    <input type="checkbox" onchange="toggleCompany(this)"
+                                        class="w-5 h-5 rounded border-slate-600 bg-slate-800 text-brand-500 focus:ring-brand-500">
+                                    <span class="text-sm text-slate-800">I know the responsible
+                                        company/individual</span>
                                 </label>
                                 <div id="companyFields" class="hidden space-y-4 pt-4 border-t border-white/5">
-                                    <input type="text" placeholder="Company or individual name" class="input-clean w-full px-4 py-3 rounded-lg text-gray-800 placeholder-slate-500">
-                                    <input type="text" placeholder="Business registration number (if known)" class="input-clean w-full px-4 py-3 rounded-lg text-gray-800 placeholder-slate-500">
+                                    <input type="text" placeholder="Company or individual name"
+                                        class="input-clean w-full px-4 py-3 rounded-lg text-gray-800 placeholder-slate-500">
+                                    <input type="text" placeholder="Business registration number (if known)"
+                                        class="input-clean w-full px-4 py-3 rounded-lg text-gray-800 placeholder-slate-500">
                                 </div>
                             </div>
 
                             <!-- Submit -->
                             <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                                <button type="submit" class="flex-1 bg-brand-500 hover:bg-brand-400 text-white font-semibold py-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+                                <button type="submit"
+                                    class="flex-1 bg-brand-500 hover:bg-brand-400 text-white font-semibold py-4 rounded-lg transition-colors flex items-center justify-center gap-2">
                                     <i class="fas fa-paper-plane"></i>
                                     Submit Secure Report
                                 </button>
-                                <button type="button" onclick="saveDraft()" class="px-8 py-4 border border-slate-600 hover:border-slate-500 text-slate-800 rounded-lg transition-colors">
+                                <button type="button" onclick="saveDraft()"
+                                    class="px-8 py-4 border border-slate-600 hover:border-slate-500 text-slate-800 rounded-lg transition-colors">
                                     Save Draft
                                 </button>
                             </div>
 
                             <!-- Security Badges -->
-                            <div class="flex flex-wrap justify-center gap-6 pt-6 text-xs text-slate-800 border-t border-white/5">
+                            <div
+                                class="flex flex-wrap justify-center gap-6 pt-6 text-xs text-slate-800 border-t border-white/5">
                                 <span class="flex items-center gap-2">
                                     <i class="fas fa-lock text-emerald-400"></i>
                                     256-bit Encrypted
@@ -328,7 +369,7 @@ toggle.addEventListener("click", () => {
 
                 <!-- Sidebar -->
                 <div class="lg:col-span-4 space-y-8">
-                    
+
                     <!-- Reward Info -->
                     <div class="glass-panel rounded-2xl p-8">
                         <h4 class="text-lg font-semibold text-white mb-6 flex items-center gap-2">
@@ -354,7 +395,8 @@ toggle.addEventListener("click", () => {
                             </div>
                         </div>
                         <p class="text-xs text-slate-500 mt-6 leading-relaxed">
-                            Rewards are released upon verification. Anonymous reporters may receive payment via mobile money, bank transfer, or cryptocurrency.
+                            Rewards are released upon verification. Anonymous reporters may receive payment via mobile
+                            money, bank transfer, or cryptocurrency.
                         </p>
                     </div>
 
@@ -369,13 +411,14 @@ toggle.addEventListener("click", () => {
                     <!-- Protection Notice -->
                     <div class="glass-panel rounded-2xl p-8 border-l-4 border-emerald-500">
                         <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <div
+                                class="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
                                 <i class="fas fa-shield-alt text-emerald-400"></i>
                             </div>
                             <div>
                                 <h4 class="font-semibold text-white mb-2">Legal Protection</h4>
                                 <p class="text-sm text-slate-800 leading-relaxed">
-                                    All whistleblowers are protected under the HYDROS-C Environmental Protection Act. 
+                                    All whistleblowers are protected under the HYDROS-C Environmental Protection Act.
                                     We provide legal support against retaliation.
                                 </p>
                             </div>
@@ -388,7 +431,7 @@ toggle.addEventListener("click", () => {
         <!-- Innovation Section -->
         <section id="section-innovate" class="hidden section-fade">
             <div class="grid lg:grid-cols-12 gap-8">
-                
+
                 <!-- Form -->
                 <div class="lg:col-span-8">
                     <div class="glass-panel rounded-2xl p-8 lg:p-10 mb-8">
@@ -397,7 +440,8 @@ toggle.addEventListener("click", () => {
                                 <h3 class="text-2xl font-semibold text-white mb-2">Innovation Proposal</h3>
                                 <p class="text-slate-800">Submit environmental solutions for funding consideration</p>
                             </div>
-                            <div class="px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-sm font-medium">
+                            <div
+                                class="px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-sm font-medium">
                                 Grants Available
                             </div>
                         </div>
@@ -405,14 +449,16 @@ toggle.addEventListener("click", () => {
                         <form onsubmit="submitInnovation(event)" class="space-y-8">
                             <div class="space-y-2">
                                 <label class="text-sm font-medium text-slate-800">Project Title</label>
-                                <input type="text" required placeholder="e.g., Biodegradable Oil Absorbent from Agricultural Waste" 
+                                <input type="text" required
+                                    placeholder="e.g., Biodegradable Oil Absorbent from Agricultural Waste"
                                     class="input-clean w-full px-4 py-3.5 rounded-lg text-white placeholder-slate-500">
                             </div>
 
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div class="space-y-2">
                                     <label class="text-sm font-medium text-slate-800">Category</label>
-                                    <select title="solution-category" required class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 appearance-none cursor-pointer">
+                                    <select title="solution-category" required
+                                        class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 appearance-none cursor-pointer">
                                         <option value="" class="bg-slate-300">Select category</option>
                                         <option value="filtration" class="bg-slate-300">Water Filtration</option>
                                         <option value="bioremediation" class="bg-slate-300">Bioremediation</option>
@@ -423,7 +469,8 @@ toggle.addEventListener("click", () => {
                                 </div>
                                 <div class="space-y-2">
                                     <label class="text-sm font-medium text-slate-800">Development Stage</label>
-                                    <select title="project-level" required class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 appearance-none cursor-pointer">
+                                    <select title="project-level" required
+                                        class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 appearance-none cursor-pointer">
                                         <option value="" class="bg-slate-300">Select stage</option>
                                         <option value="concept" class="bg-slate-300">Concept</option>
                                         <option value="prototype" class="bg-slate-300">Prototype</option>
@@ -435,49 +482,63 @@ toggle.addEventListener("click", () => {
 
                             <div class="space-y-2">
                                 <label class="text-sm font-medium text-slate-800">Detailed Description</label>
-                                <textarea required rows="6" placeholder="Describe your solution, the problem it addresses, technical approach, and expected impact..." 
+                                <textarea required rows="6"
+                                    placeholder="Describe your solution, the problem it addresses, technical approach, and expected impact..."
                                     class="input-clean w-full px-4 py-3.5 rounded-lg text-white placeholder-slate-500 resize-none"></textarea>
                             </div>
 
                             <div class="space-y-3">
                                 <label class="text-sm font-medium text-slate-800">Support Required</label>
                                 <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                                    <label class="flex items-center gap-3 p-4 bg-slate-800/30 rounded-lg cursor-pointer hover:bg-slate-800/50 transition-colors">
-                                        <input type="checkbox" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500">
+                                    <label
+                                        class="flex items-center gap-3 p-4 bg-slate-800/30 rounded-lg cursor-pointer hover:bg-slate-800/50 transition-colors">
+                                        <input type="checkbox"
+                                            class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500">
                                         <span class="text-sm text-slate-800">Funding</span>
                                     </label>
-                                    <label class="flex items-center gap-3 p-4 bg-slate-800/30 rounded-lg cursor-pointer hover:bg-slate-800/50 transition-colors">
-                                        <input type="checkbox" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500">
+                                    <label
+                                        class="flex items-center gap-3 p-4 bg-slate-800/30 rounded-lg cursor-pointer hover:bg-slate-800/50 transition-colors">
+                                        <input type="checkbox"
+                                            class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500">
                                         <span class="text-sm text-slate-800">Mentorship</span>
                                     </label>
-                                    <label class="flex items-center gap-3 p-4 bg-slate-800/30 rounded-lg cursor-pointer hover:bg-slate-800/50 transition-colors">
-                                        <input type="checkbox" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500">
+                                    <label
+                                        class="flex items-center gap-3 p-4 bg-slate-800/30 rounded-lg cursor-pointer hover:bg-slate-800/50 transition-colors">
+                                        <input type="checkbox"
+                                            class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500">
                                         <span class="text-sm text-slate-800">Lab Access</span>
                                     </label>
-                                    <label class="flex items-center gap-3 p-4 bg-slate-800/30 rounded-lg cursor-pointer hover:bg-slate-800/50 transition-colors">
-                                        <input type="checkbox" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500">
+                                    <label
+                                        class="flex items-center gap-3 p-4 bg-slate-800/30 rounded-lg cursor-pointer hover:bg-slate-800/50 transition-colors">
+                                        <input type="checkbox"
+                                            class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500">
                                         <span class="text-sm text-slate-800">Pilot Site</span>
                                     </label>
                                 </div>
                             </div>
 
-                            <div class="p-6 bg-gradient-to-r from-purple-500/10 to-brand-500/10 rounded-xl border border-purple-500/20">
+                            <div
+                                class="p-6 bg-gradient-to-r from-purple-500/10 to-brand-500/10 rounded-xl border border-purple-500/20">
                                 <div class="flex items-start gap-4">
-                                    <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <div
+                                        class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                         <i class="fas fa-graduation-cap text-purple-400"></i>
                                     </div>
                                     <div class="flex-1">
                                         <h4 class="font-semibold text-white mb-2">Seasonal Scholarship</h4>
-                                        <p class="text-sm text-slate-800 mb-4">Students may apply for research grants up to $5,000 and internship placement.</p>
+                                        <p class="text-sm text-slate-800 mb-4">Students may apply for research grants up
+                                            to $5,000 and internship placement.</p>
                                         <label class="flex items-center gap-3">
-                                            <input type="checkbox" id="scholarshipCheck" class="w-5 h-5 rounded border-slate-600 bg-slate-800 text-purple-500 focus:ring-purple-500">
+                                            <input type="checkbox" id="scholarshipCheck"
+                                                class="w-5 h-5 rounded border-slate-600 bg-slate-800 text-purple-500 focus:ring-purple-500">
                                             <span class="text-sm text-slate-800">Apply for student scholarship</span>
                                         </label>
                                     </div>
                                 </div>
                             </div>
 
-                            <button type="submit" class="w-full bg-brand-500 hover:bg-brand-400 text-white font-semibold py-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+                            <button type="submit"
+                                class="w-full bg-brand-500 hover:bg-brand-400 text-white font-semibold py-4 rounded-lg transition-colors flex items-center justify-center gap-2">
                                 <i class="fas fa-rocket"></i>
                                 Submit Proposal
                             </button>
@@ -495,14 +556,15 @@ toggle.addEventListener("click", () => {
 
                 <!-- Sidebar -->
                 <div class="lg:col-span-4 space-y-8">
-                    
+
                     <!-- Opportunities -->
                     <div class="glass-panel rounded-2xl p-8">
                         <h4 class="text-lg font-semibold text-white mb-6">Current Opportunities</h4>
                         <div class="space-y-6">
                             <div class="p-5 bg-slate-800/30 rounded-xl border-l-4 border-brand-500">
                                 <div class="flex justify-between items-start mb-2">
-                                    <span class="text-xs font-medium text-brand-400 uppercase tracking-wider">Spring 2026</span>
+                                    <span class="text-xs font-medium text-brand-400 uppercase tracking-wider">Spring
+                                        2026</span>
                                     <span class="text-xs text-slate-500">Mar 30</span>
                                 </div>
                                 <h5 class="font-semibold text-white mb-2">Youth Water Innovation</h5>
@@ -512,7 +574,8 @@ toggle.addEventListener("click", () => {
 
                             <div class="p-5 bg-slate-800/30 rounded-xl border-l-4 border-emerald-500">
                                 <div class="flex justify-between items-start mb-2">
-                                    <span class="text-xs font-medium text-emerald-400 uppercase tracking-wider">Rolling</span>
+                                    <span
+                                        class="text-xs font-medium text-emerald-400 uppercase tracking-wider">Rolling</span>
                                     <span class="text-xs text-slate-500">Open</span>
                                 </div>
                                 <h5 class="font-semibold text-white mb-2">Community Solutions</h5>
@@ -522,7 +585,8 @@ toggle.addEventListener("click", () => {
 
                             <div class="p-5 bg-slate-800/30 rounded-xl border-l-4 border-purple-500">
                                 <div class="flex justify-between items-start mb-2">
-                                    <span class="text-xs font-medium text-purple-400 uppercase tracking-wider">Summer 2026</span>
+                                    <span class="text-xs font-medium text-purple-400 uppercase tracking-wider">Summer
+                                        2026</span>
                                     <span class="text-xs text-slate-500">May 1</span>
                                 </div>
                                 <h5 class="font-semibold text-white mb-2">Research Scholarship</h5>
@@ -536,7 +600,8 @@ toggle.addEventListener("click", () => {
                     <div class="glass-panel rounded-2xl p-8">
                         <h4 class="text-lg font-semibold text-white mb-6">Success Story</h4>
                         <div class="flex gap-4 mb-4">
-                            <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">
                                 SK
                             </div>
                             <div>
@@ -545,7 +610,7 @@ toggle.addEventListener("click", () => {
                             </div>
                         </div>
                         <p class="text-sm text-slate-800 leading-relaxed mb-4">
-                            Received $8,000 to develop low-cost water purification using moringa seeds. 
+                            Received $8,000 to develop low-cost water purification using moringa seeds.
                             Now serving 5,000+ households across East Africa.
                         </p>
                         <div class="flex items-center gap-2 text-xs text-emerald-400">
@@ -560,25 +625,28 @@ toggle.addEventListener("click", () => {
         <!-- Rewards Section -->
         <section id="section-rewards" class="hidden section-fade">
             <div class="max-w-4xl mx-auto">
-                
+
                 <!-- Stats -->
                 <div class="grid md:grid-cols-3 gap-6 mb-12">
                     <div class="glass-panel rounded-2xl p-8 text-center">
-                        <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-coins text-2xl text-white"></i>
                         </div>
                         <div class="text-3xl font-bold text-white mb-1" id="statEarnings">$0</div>
                         <div class="text-sm text-slate-400">Total Earnings</div>
                     </div>
                     <div class="glass-panel rounded-2xl p-8 text-center">
-                        <div class="w-16 h-16 bg-gradient-to-br from-brand-400 to-brand-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-brand-400 to-brand-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-clipboard-check text-2xl text-white"></i>
                         </div>
                         <div class="text-3xl font-bold text-white mb-1" id="statVerified">0</div>
                         <div class="text-sm text-slate-400">Verified Reports</div>
                     </div>
                     <div class="glass-panel rounded-2xl p-8 text-center">
-                        <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-star text-2xl text-white"></i>
                         </div>
                         <div class="text-3xl font-bold text-white mb-1" id="statImpact">0</div>
@@ -593,7 +661,8 @@ toggle.addEventListener("click", () => {
                         <div class="text-center py-16 text-slate-500">
                             <i class="fas fa-gift text-4xl mb-4 opacity-20"></i>
                             <p class="mb-4">Start reporting incidents to earn rewards</p>
-                            <button onclick="switchTab('report')" class="text-brand-400 hover:text-brand-300 font-medium">
+                            <button onclick="switchTab('report')"
+                                class="text-brand-400 hover:text-brand-300 font-medium">
                                 Submit your first report →
                             </button>
                         </div>
@@ -608,7 +677,8 @@ toggle.addEventListener("click", () => {
     <div id="loginModal" class="fixed inset-0 z-[100] hidden">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
         <div class="relative min-h-screen flex items-center justify-center p-4">
-            <div class="glass-panel w-full max-w-md rounded-2xl p-8 transform scale-95 opacity-0 transition-all duration-300" id="modalContent">
+            <div class="glass-panel w-full max-w-md rounded-2xl p-8 transform scale-95 opacity-0 transition-all duration-300"
+                id="modalContent">
                 <div class="flex justify-between items-center mb-8">
                     <h3 class="text-2xl font-semibold text-white">Sign In</h3>
                     <button onclick="closeModal()" class="text-slate-400 hover:text-white">
@@ -619,15 +689,15 @@ toggle.addEventListener("click", () => {
                 <form onsubmit="handleLogin(event)" class="space-y-6">
                     <div class="space-y-2">
                         <label class="text-sm font-medium text-slate-800">Email Address</label>
-                        <input title="email" type="email" id="loginEmail" required 
+                        <input title="email" type="email" id="loginEmail" required
                             class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 placeholder-slate-500">
                     </div>
                     <div class="space-y-2">
                         <label class="text-sm font-medium text-slate-800">Password</label>
-                        <input title="password" type="password" required 
+                        <input title="password" type="password" required
                             class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 placeholder-slate-500">
                     </div>
-                    
+
                     <div class="flex items-center justify-between text-sm">
                         <label class="flex items-center gap-2 text-slate-800">
                             <input type="checkbox" class="rounded border-slate-600 bg-slate-800">
@@ -636,7 +706,8 @@ toggle.addEventListener("click", () => {
                         <a href="#" class="text-brand-400 hover:text-brand-300">Forgot password?</a>
                     </div>
 
-                    <button type="submit" class="w-full bg-brand-500 hover:bg-brand-400 text-white font-semibold py-3.5 rounded-lg transition-colors">
+                    <button type="submit"
+                        class="w-full bg-brand-500 hover:bg-brand-400 text-white font-semibold py-3.5 rounded-lg transition-colors">
                         Sign In
                     </button>
 
@@ -650,19 +721,22 @@ toggle.addEventListener("click", () => {
                     </div>
 
                     <div class="grid grid-cols-2 gap-3">
-                        <button type="button" class="flex items-center justify-center gap-2 py-3 border border-slate-600 rounded-lg hover:bg-slate-200 transition-colors text-sm text-slate-800">
+                        <button type="button"
+                            class="flex items-center justify-center gap-2 py-3 border border-slate-600 rounded-lg hover:bg-slate-200 transition-colors text-sm text-slate-800">
                             <i class="fab fa-google"></i>
                             Google
                         </button>
-                        <button type="button" class="flex items-center justify-center gap-2 py-3 border border-slate-600 rounded-lg hover:bg-slate-200 transition-colors text-sm text-slate-800">
+                        <button type="button"
+                            class="flex items-center justify-center gap-2 py-3 border border-slate-600 rounded-lg hover:bg-slate-200 transition-colors text-sm text-slate-800">
                             <i class="fas fa-mobile-alt"></i>
                             Phone
                         </button>
                     </div>
 
                     <p class="text-center text-sm text-slate-800">
-                        Don't have an account? 
-                        <button type="button" class="text-brand-400 hover:text-brand-300 font-medium">Create account</button>
+                        Don't have an account?
+                        <button type="button" class="text-brand-400 hover:text-brand-300 font-medium">Create
+                            account</button>
                     </p>
                 </form>
             </div>
@@ -670,8 +744,10 @@ toggle.addEventListener("click", () => {
     </div>
 
     <!-- Toast -->
-    <div id="toast" class="fixed bottom-8 right-8 z-[100] transform translate-x-full opacity-0 transition-all duration-300">
-        <div class="glass-panel px-6 py-4 rounded-xl border-l-4 border-emerald-500 flex items-center gap-4 min-w-[300px]">
+    <div id="toast"
+        class="fixed bottom-8 right-8 z-[100] transform translate-x-full opacity-0 transition-all duration-300">
+        <div
+            class="glass-panel px-6 py-4 rounded-xl border-l-4 border-emerald-500 flex items-center gap-4 min-w-[300px]">
             <i class="fas fa-check-circle text-emerald-400 text-xl"></i>
             <div>
                 <h4 class="font-semibold text-white text-sm" id="toastTitle">Success</h4>
@@ -718,7 +794,7 @@ toggle.addEventListener("click", () => {
             const btn = document.getElementById('anonToggle');
             const dot = btn.querySelector('div');
             const isActive = btn.classList.contains('bg-brand-500');
-            
+
             if (isActive) {
                 btn.classList.remove('bg-brand-500');
                 btn.classList.add('bg-slate-600');
@@ -744,7 +820,7 @@ toggle.addEventListener("click", () => {
             list.innerHTML = Array.from(input.files).map(f => `
                 <div class="flex items-center justify-between p-3 bg-slate-800 rounded-lg text-sm">
                     <span class="text-white truncate">${f.name}</span>
-                    <span class="text-slate-500">${(f.size/1024/1024).toFixed(1)} MB</span>
+                    <span class="text-slate-500">${(f.size / 1024 / 1024).toFixed(1)} MB</span>
                 </div>
             `).join('');
         }
@@ -778,7 +854,7 @@ toggle.addEventListener("click", () => {
 
             reports.push(report);
             Storage.set('reports', reports);
-            
+
             showToast('Report submitted successfully');
             e.target.reset();
             updateStats();
@@ -801,7 +877,7 @@ toggle.addEventListener("click", () => {
 
             innovations.push(innovation);
             Storage.set('innovations', innovations);
-            
+
             showToast('Proposal submitted for review');
             e.target.reset();
             loadSubmissions();
@@ -817,17 +893,17 @@ toggle.addEventListener("click", () => {
                 { type: 'Toxic Spillage', location: 'Nairobi River', status: 'verified', reward: 350, date: '2h ago' },
                 { type: 'Industrial Waste', location: 'Lake Victoria', status: 'pending', reward: 0, date: '5h ago' }
             ];
-            
+
             document.getElementById('recentList').innerHTML = mock.map(r => `
                 <div class="flex items-center justify-between py-3 border-b border-white/5 last:border-0">
                     <div>
                         <div class="text-sm text-white font-medium">${r.type}</div>
                         <div class="text-xs text-slate-500">${r.location} • ${r.date}</div>
                     </div>
-                    ${r.status === 'verified' 
-                        ? `<div class="text-right"><div class="text-emerald-400 font-semibold text-sm">+$${r.reward}</div><div class="text-xs text-emerald-400/70">Verified</div></div>`
-                        : `<div class="text-xs text-amber-400"><i class="fas fa-clock mr-1"></i>Pending</div>`
-                    }
+                    ${r.status === 'verified'
+                    ? `<div class="text-right"><div class="text-emerald-400 font-semibold text-sm">+$${r.reward}</div><div class="text-xs text-emerald-400/70">Verified</div></div>`
+                    : `<div class="text-xs text-amber-400"><i class="fas fa-clock mr-1"></i>Pending</div>`
+                }
                 </div>
             `).join('');
         }
@@ -835,7 +911,7 @@ toggle.addEventListener("click", () => {
         function loadSubmissions() {
             const list = document.getElementById('submissionsList');
             const userSubs = innovations.filter(i => i.userId === currentUser?.id);
-            
+
             list.innerHTML = userSubs.length ? userSubs.map(s => `
                 <div class="p-4 bg-slate-800/30 rounded-lg border-l-4 border-purple-500">
                     <div class="flex justify-between items-start">
@@ -850,7 +926,7 @@ toggle.addEventListener("click", () => {
         function updateStats() {
             const verified = reports.filter(r => r.status === 'verified');
             const total = verified.reduce((a, b) => a + b.reward, 0);
-            
+
             document.getElementById('statEarnings').textContent = `$${total}`;
             document.getElementById('statVerified').textContent = verified.length;
             document.getElementById('statImpact').textContent = verified.length * 100;
@@ -929,7 +1005,7 @@ toggle.addEventListener("click", () => {
         function showToast(message, type = 'success') {
             const toast = document.getElementById('toast');
             document.getElementById('toastMessage').textContent = message;
-            
+
             toast.classList.remove('translate-x-full', 'opacity-0');
             setTimeout(() => {
                 toast.classList.add('translate-x-full', 'opacity-0');
@@ -938,4 +1014,5 @@ toggle.addEventListener("click", () => {
     </script>
 
 </body>
+
 </html>
