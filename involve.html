@@ -154,7 +154,7 @@
             </div>
             <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-sm font-semibold text-white"
                 id="userAvatar"></div>
-            <button onclick="logout()" class="text-slate-400 hover:text-white transition-colors">
+            <button id="logoutBtn" class="text-slate-400 hover:text-white transition-colors">
                 <i class="fas fa-sign-out-alt"></i>
             </button>
         </div>
@@ -953,7 +953,7 @@
             }
         }
 
-        // Auth
+        // SIGN IN
         function handleLogin(e) {
             e.preventDefault();
             const email = document.getElementById('loginEmail').value;
@@ -977,10 +977,18 @@
             document.getElementById('userAvatar').textContent = currentUser.name.slice(0, 2).toUpperCase();
         }
 
-        function logout() {
-            Storage.remove('user');
-            location.reload();
-        }
+        document.getElementById("logoutBtn").addEventListener("click", logout);
+
+function logout() {
+    localStorage.removeItem("user");
+    location.reload();
+}
+
+        // function logout() {
+        //     console.log("Logout clicked")
+        //     Storage.remove('user');
+        //     location.reload();
+        // }
 
         // Modal
         function openModal() {
