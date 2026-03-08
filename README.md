@@ -17,7 +17,7 @@ This project mainly focuses on JavaScript elements accompanied with other techni
    * DOM manipulation
    * Event Handling to capture users actions 
    * Local storage for persistent storage of data and the fetching of it 
-   * Asynchronous programing especially on animations on time delays, AJAX 
+   * Asynchronous programming especially on animations on time delays, AJAX 
    * Fetching APIs and error handling
    * AOS and other animation libraries
 
