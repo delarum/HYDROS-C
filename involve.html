@@ -3,18 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYDROS-C - Community Action Center</title>
     <link rel="stylesheet" href="style.css">
-    <title>Home Page</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-
-<!-- Leaflet Map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-
-    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        ocean: {
+                            900: '#0a1628',
+                            800: '#1e293b',
+                            700: '#334155',
+                        },
+                        brand: {
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e6f5f6;
+            color: #f8fafc;
+        }
+        
+        .glass-panel {
+            background:#ADDADC;
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #1B4965, #4A90E2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .input-clean {
+            background: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+        }
+        
+        .input-clean:focus {
+            outline: none;
+            border-color: #1B4965;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+        
+        .tab-active {
+            background: linear-gradient(135deg, #1B4965, #4A90E2);
+            color: white;
+        }
+        
+        .reward-pulse {
+            animation: pulse-subtle 2s infinite;
+        }
+        
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .section-fade {
+            animation: fadeIn 0.4s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-<body>
-    <nav class="navbar">
+<body class="min-h-screen antialiased">
+
+    <!-- Navigation -->
+    <!-- <nav class="fixed top-0 w-full z-50 glass-panel border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 bg-gradient-to-br from-brand-400 to-brand-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-water text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-semibold text-white tracking-tight">HYDROS-C</h1>
+                        <p class="text-xs text-slate-400">Community Action Center</p>
+                    </div>
+                </div> -->
+
+                <nav class="navbar">
     <div class="logo">
         🌊 HYDROS-C
     </div>
@@ -31,7 +121,7 @@
     <div class="menu-toggle" id="menuToggle">
         ☰
     </div>
-</nav>
+
 <script>
 const toggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
@@ -40,64 +130,812 @@ toggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
 </script>
+                
+                <div id="userSection" class="hidden items-center gap-6">
+                    <div class="text-right">
+                        <p id="userName" class="text-sm font-medium text-white"></p>
+                        <p id="userPoints" class="text-xs text-brand-400">0 Impact Points</p>
+                    </div>
+                    <div class="w-10 h-10 bg-slate-700 rounded-full flex items-center justify-center text-sm font-semibold text-white" id="userAvatar"></div>
+                    <button onclick="logout()" class="text-slate-400 hover:text-white transition-colors">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+                
+                <button id="loginBtn" onclick="openModal()" class="px-5 py-2.5 bg-brand-500 hover:bg-brand-400 text-white text-sm font-medium rounded-lg transition-colors">
+                    Sign In
+                </button>
+            </div>
+        </div>
+    </nav>
 
-<footer class="footer">
-
-    <div class="footer-container">
-
-        <!-- Company Info -->
-        <div class="footer-section">
-            <h2 class="footer-logo">🌊 HYDROS-C</h2>
-            <p>
-                Leading large-scale water body cleaning and environmental 
-                restoration solutions. Protecting oceans, lakes, and rivers 
-                for a sustainable future.
+    <!-- Main Content -->
+    <main class="pt-32 pb-24 px-6 lg:px-8 max-w-7xl mx-auto">
+        
+        <!-- Header -->
+        <div class="text-center mb-20 section-fade">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-sm mb-8">
+                <i class="fas fa-shield-alt text-xs"></i>
+                <span>Secure & Anonymous Reporting</span>
+            </div>
+            <h2 class="text-4xl lg:text-6xl font-light text-white mb-6 tracking-tight">
+                Be a <span class="gradient-text font-semibold">Water Guardian</span>
+            </h2>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                Join thousands of citizens protecting Africa's water bodies. Report pollution incidents securely, 
+                earn verified rewards, and contribute to environmental innovation.
             </p>
         </div>
 
-        <!-- Quick Links -->
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="partner.html">Partnership</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="tracker.html">Devices</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+        <!-- Tab Navigation -->
+        <div class="flex justify-center mb-16">
+            <div class="inline-flex p-1.5 bg-slate-800/50 rounded-xl border border-white/5">
+                <button onclick="switchTab('report')" id="tab-report" class="tab-active px-6 py-3 rounded-lg text-sm font-medium transition-all flex items-center gap-2">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Report Incident
+                </button>
+                <button onclick="switchTab('innovate')" id="tab-innovate" class="px-6 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-white transition-all flex items-center gap-2">
+                    <i class="fas fa-lightbulb"></i>
+                    Innovation Lab
+                </button>
+                <button onclick="switchTab('rewards')" id="tab-rewards" class="px-6 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-white transition-all flex items-center gap-2">
+                    <i class="fas fa-trophy"></i>
+                    My Rewards
+                </button>
+            </div>
         </div>
 
-        <!-- Services -->
-        <div class="footer-section">
-            <h3>Our Expertise</h3>
-            <ul>
-                <li>Ocean Waste Removal</li>
-                <li>Lake Restoration</li>
-                <li>Oil Spill Cleanup</li>
-                <li>Industrial Water Treatment</li>
-                <li>Marine Ecosystem Protection</li>
-            </ul>
-        </div>
+        <!-- Report Section -->
+        <section id="section-report" class="section-fade">
+            <div class="grid lg:grid-cols-12 gap-8">
+                
+                <!-- Main Form -->
+                <div class="lg:col-span-8 space-y-8">
+                    
+                    <!-- Form Card -->
+                    <div class="glass-panel rounded-2xl p-8 lg:p-10">
+                        <div class="flex items-start justify-between mb-10">
+                            <div>
+                                <h3 class="text-2xl font-semibold text-white mb-2">Submit Incident Report</h3>
+                                <p class="text-slate-400">Help identify toxic waste and illegal dumping activities</p>
+                            </div>
+                            <div class="flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-sm font-medium reward-pulse">
+                                <i class="fas fa-coins"></i>
+                                <span>Reward up to $500</span>
+                            </div>
+                        </div>
 
-        <!-- Contact -->
-        <div class="footer-section">
-            <h3>Contact</h3>
-            <p>Email: info@hydrosc.com</p>
-            <p>Phone: +254 700 000 000</p><br>
-            <h3>Office Locations</h3>
-            <p>Nairobi, Kenya</p>
-            <p>Kigali, Rwanda</p>
-            <P>Dakar, Senegal</P>
-        </div>
+                        <!-- Anonymous Option -->
+                        <div class="mb-10 p-6 bg-slate-800/30 rounded-xl border border-white/5">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-sm font-medium text-white">Submit Anonymously</span>
+                                <button onclick="toggleAnon()" id="anonToggle" class="w-12 h-6 bg-brand-500 rounded-full relative transition-colors">
+                                    <div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full transition-all"></div>
+                                </button>
+                            </div>
+                            <p class="text-sm text-slate-800 leading-relaxed">
+                                Your identity is encrypted and protected under our Whistleblower Protection Policy. 
+                                Anonymous reporters receive rewards via secure payment channels.
+                            </p>
+                        </div>
 
+                        <form onsubmit="submitReport(event)" class="space-y-8">
+                            
+                            <!-- Row 1 -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-medium text-slate-800">Incident Type</label>
+                                    <select title="report-type" required class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 appearance-none cursor-pointer">
+                                        <option value="" class="bg-slate-300">Select type</option>
+                                        <option value="toxic" class="bg-slate-300">Toxic Chemical Spillage</option>
+                                        <option value="industrial" class="bg-slate-300">Industrial Waste Dumping</option>
+                                        <option value="plastic" class="bg-slate-300">Plastic/Garbage Accumulation</option>
+                                        <option value="oil" class="bg-slate-300">Oil/Hydrocarbon Leak</option>
+                                        <option value="sewage" class="bg-slate-300">Raw Sewage Discharge</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-medium text-slate-800">Water Body</label>
+                                    <select title="large-waterbody" required class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 appearance-none cursor-pointer">
+                                        <option value="" class="bg-slate-300">Select location</option>
+                                        <option value="victoria" class="bg-slate-300">Lake Victoria</option>
+                                        <option value="nairobi" class="bg-slate-300">Nairobi River</option>
+                                        <option value="congo" class="bg-slate-300">Congo River</option>
+                                        <option value="chad" class="bg-slate-300">Lake Chad</option>
+                                        <option value="niger" class="bg-slate-300">Niger River</option>
+                                        <option value="tanganyika" class="bg-slate-300">Lake Tanganyika</option>
+                                        <option value="zambezi" class="bg-slate-300">Zambezi River</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-slate-800">Specific Location</label>
+                                <div class="relative">
+                                    <input type="text" required placeholder="Enter address or GPS coordinates" 
+                                        class="input-clean w-full px-4 py-3.5 pl-11 rounded-lg text-gray-800 placeholder-slate-500">
+                                    <i class="fas fa-map-marker-alt absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                                    <button type="button" onclick="getLocation()" class="absolute right-3 top-1/2 -translate-y-1/2 text-xs bg-slate-700 hover:bg-slate-600 text-brand-400 px-3 py-1.5 rounded-md transition-colors">
+                                        Use GPS
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-slate-800">Incident Description</label>
+                                <textarea required rows="5" placeholder="Describe what you observed, including approximate time, responsible parties if known, and extent of pollution..." 
+                                    class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 placeholder-slate-500 resize-none"></textarea>
+                            </div>
+
+                            <!-- Evidence Upload -->
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-slate-300">Evidence Upload</label>
+                                <div onclick="document.getElementById('fileInput').click()" 
+                                    class="border-2 border-dashed border-slate-700 hover:border-brand-500/50 rounded-xl p-10 text-center cursor-pointer transition-colors bg-slate-800/20">
+                                    <input title="fileinput" type="file" id="fileInput" multiple accept="image/*,video/*" class="hidden" onchange="handleFiles(this)">
+                                    <div class="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <i class="fas fa-cloud-upload-alt text-2xl text-brand-400"></i>
+                                    </div>
+                                    <p class="text-white font-medium mb-1">Drop files or click to upload</p>
+                                    <p class="text-sm text-slate-500">JPG, PNG, MP4 up to 50MB</p>
+                                    <div id="fileList" class="mt-4 space-y-2 hidden text-left"></div>
+                                </div>
+                            </div>
+
+                            <!-- Responsible Party -->
+                            <div class="p-6 bg-slate-800/20 rounded-xl border border-white/5">
+                                <label class="flex items-center gap-3 cursor-pointer mb-4">
+                                    <input type="checkbox" onchange="toggleCompany(this)" class="w-5 h-5 rounded border-slate-600 bg-slate-800 text-brand-500 focus:ring-brand-500">
+                                    <span class="text-sm text-slate-800">I know the responsible company/individual</span>
+                                </label>
+                                <div id="companyFields" class="hidden space-y-4 pt-4 border-t border-white/5">
+                                    <input type="text" placeholder="Company or individual name" class="input-clean w-full px-4 py-3 rounded-lg text-gray-800 placeholder-slate-500">
+                                    <input type="text" placeholder="Business registration number (if known)" class="input-clean w-full px-4 py-3 rounded-lg text-gray-800 placeholder-slate-500">
+                                </div>
+                            </div>
+
+                            <!-- Submit -->
+                            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                                <button type="submit" class="flex-1 bg-brand-500 hover:bg-brand-400 text-white font-semibold py-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Submit Secure Report
+                                </button>
+                                <button type="button" onclick="saveDraft()" class="px-8 py-4 border border-slate-600 hover:border-slate-500 text-slate-800 rounded-lg transition-colors">
+                                    Save Draft
+                                </button>
+                            </div>
+
+                            <!-- Security Badges -->
+                            <div class="flex flex-wrap justify-center gap-6 pt-6 text-xs text-slate-800 border-t border-white/5">
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-lock text-emerald-400"></i>
+                                    256-bit Encrypted
+                                </span>
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-user-secret text-brand-400"></i>
+                                    Whistleblower Protected
+                                </span>
+                                <span class="flex items-center gap-2">
+                                    <i class="fas fa-check-circle text-purple-400"></i>
+                                    Verified in 24-48hrs
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-4 space-y-8">
+                    
+                    <!-- Reward Info -->
+                    <div class="glass-panel rounded-2xl p-8">
+                        <h4 class="text-lg font-semibold text-white mb-6 flex items-center gap-2">
+                            <i class="fas fa-gift text-amber-400"></i>
+                            Reward Structure
+                        </h4>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-3 border-b border-white/5">
+                                <span class="text-slate-800">Toxic Spillage</span>
+                                <span class="text-emerald-400 font-semibold">$300 – $500</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-white/5">
+                                <span class="text-slate-800">Industrial Dumping</span>
+                                <span class="text-emerald-400 font-semibold">$200 – $400</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-white/5">
+                                <span class="text-slate-800">Oil/Hydrocarbon</span>
+                                <span class="text-emerald-400 font-semibold">$250 – $450</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3">
+                                <span class="text-slate-800">Garbage/Plastic</span>
+                                <span class="text-emerald-400 font-semibold">$50 – $150</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-6 leading-relaxed">
+                            Rewards are released upon verification. Anonymous reporters may receive payment via mobile money, bank transfer, or cryptocurrency.
+                        </p>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="glass-panel rounded-2xl p-8">
+                        <h4 class="text-lg font-semibold text-white mb-6">Recent Verified Reports</h4>
+                        <div class="space-y-4" id="recentList">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Protection Notice -->
+                    <div class="glass-panel rounded-2xl p-8 border-l-4 border-emerald-500">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-emerald-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-2">Legal Protection</h4>
+                                <p class="text-sm text-slate-800 leading-relaxed">
+                                    All whistleblowers are protected under the HYDROS-C Environmental Protection Act. 
+                                    We provide legal support against retaliation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Innovation Section -->
+        <section id="section-innovate" class="hidden section-fade">
+            <div class="grid lg:grid-cols-12 gap-8">
+                
+                <!-- Form -->
+                <div class="lg:col-span-8">
+                    <div class="glass-panel rounded-2xl p-8 lg:p-10 mb-8">
+                        <div class="flex items-start justify-between mb-10">
+                            <div>
+                                <h3 class="text-2xl font-semibold text-white mb-2">Innovation Proposal</h3>
+                                <p class="text-slate-800">Submit environmental solutions for funding consideration</p>
+                            </div>
+                            <div class="px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-sm font-medium">
+                                Grants Available
+                            </div>
+                        </div>
+
+                        <form onsubmit="submitInnovation(event)" class="space-y-8">
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-slate-800">Project Title</label>
+                                <input type="text" required placeholder="e.g., Biodegradable Oil Absorbent from Agricultural Waste" 
+                                    class="input-clean w-full px-4 py-3.5 rounded-lg text-white placeholder-slate-500">
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-medium text-slate-800">Category</label>
+                                    <select title="solution-category" required class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 appearance-none cursor-pointer">
+                                        <option value="" class="bg-slate-300">Select category</option>
+                                        <option value="filtration" class="bg-slate-300">Water Filtration</option>
+                                        <option value="bioremediation" class="bg-slate-300">Bioremediation</option>
+                                        <option value="monitoring" class="bg-slate-300">Monitoring Technology</option>
+                                        <option value="waste" class="bg-slate-300">Waste Management</option>
+                                        <option value="energy" class="bg-slate-300">Clean Energy</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-medium text-slate-800">Development Stage</label>
+                                    <select title="project-level" required class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 appearance-none cursor-pointer">
+                                        <option value="" class="bg-slate-300">Select stage</option>
+                                        <option value="concept" class="bg-slate-300">Concept</option>
+                                        <option value="prototype" class="bg-slate-300">Prototype</option>
+                                        <option value="testing" class="bg-slate-300">Field Testing</option>
+                                        <option value="market" class="bg-slate-300">Market Ready</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-slate-800">Detailed Description</label>
+                                <textarea required rows="6" placeholder="Describe your solution, the problem it addresses, technical approach, and expected impact..." 
+                                    class="input-clean w-full px-4 py-3.5 rounded-lg text-white placeholder-slate-500 resize-none"></textarea>
+                            </div>
+
+                            <div class="space-y-3">
+                                <label class="text-sm font-medium text-slate-800">Support Required</label>
+                                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                    <label class="flex items-center gap-3 p-4 bg-slate-800/30 rounded-lg cursor-pointer hover:bg-slate-800/50 transition-colors">
+                                        <input type="checkbox" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500">
+                                        <span class="text-sm text-slate-800">Funding</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 p-4 bg-slate-800/30 rounded-lg cursor-pointer hover:bg-slate-800/50 transition-colors">
+                                        <input type="checkbox" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500">
+                                        <span class="text-sm text-slate-800">Mentorship</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 p-4 bg-slate-800/30 rounded-lg cursor-pointer hover:bg-slate-800/50 transition-colors">
+                                        <input type="checkbox" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500">
+                                        <span class="text-sm text-slate-800">Lab Access</span>
+                                    </label>
+                                    <label class="flex items-center gap-3 p-4 bg-slate-800/30 rounded-lg cursor-pointer hover:bg-slate-800/50 transition-colors">
+                                        <input type="checkbox" class="w-4 h-4 rounded border-slate-600 bg-slate-800 text-brand-500">
+                                        <span class="text-sm text-slate-800">Pilot Site</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="p-6 bg-gradient-to-r from-purple-500/10 to-brand-500/10 rounded-xl border border-purple-500/20">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fas fa-graduation-cap text-purple-400"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="font-semibold text-white mb-2">Seasonal Scholarship</h4>
+                                        <p class="text-sm text-slate-800 mb-4">Students may apply for research grants up to $5,000 and internship placement.</p>
+                                        <label class="flex items-center gap-3">
+                                            <input type="checkbox" id="scholarshipCheck" class="w-5 h-5 rounded border-slate-600 bg-slate-800 text-purple-500 focus:ring-purple-500">
+                                            <span class="text-sm text-slate-800">Apply for student scholarship</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-500 hover:bg-brand-400 text-white font-semibold py-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+                                <i class="fas fa-rocket"></i>
+                                Submit Proposal
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- My Submissions -->
+                    <div class="glass-panel rounded-2xl p-8">
+                        <h4 class="text-lg font-semibold text-white mb-6">My Submissions</h4>
+                        <div id="submissionsList" class="space-y-4">
+                            <p class="text-slate-500 text-center py-8">No submissions yet</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-4 space-y-8">
+                    
+                    <!-- Opportunities -->
+                    <div class="glass-panel rounded-2xl p-8">
+                        <h4 class="text-lg font-semibold text-white mb-6">Current Opportunities</h4>
+                        <div class="space-y-6">
+                            <div class="p-5 bg-slate-800/30 rounded-xl border-l-4 border-brand-500">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-xs font-medium text-brand-400 uppercase tracking-wider">Spring 2026</span>
+                                    <span class="text-xs text-slate-500">Mar 30</span>
+                                </div>
+                                <h5 class="font-semibold text-white mb-2">Youth Water Innovation</h5>
+                                <p class="text-sm text-slate-800 mb-3">Grants up to $10,000 for innovators under 30</p>
+                                <div class="text-xs text-slate-500">142 applications</div>
+                            </div>
+
+                            <div class="p-5 bg-slate-800/30 rounded-xl border-l-4 border-emerald-500">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-xs font-medium text-emerald-400 uppercase tracking-wider">Rolling</span>
+                                    <span class="text-xs text-slate-500">Open</span>
+                                </div>
+                                <h5 class="font-semibold text-white mb-2">Community Solutions</h5>
+                                <p class="text-sm text-slate-800 mb-3">Micro-grants for local water cleanup tech</p>
+                                <div class="text-xs text-slate-500">$500 – $2,000</div>
+                            </div>
+
+                            <div class="p-5 bg-slate-800/30 rounded-xl border-l-4 border-purple-500">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-xs font-medium text-purple-400 uppercase tracking-wider">Summer 2026</span>
+                                    <span class="text-xs text-slate-500">May 1</span>
+                                </div>
+                                <h5 class="font-semibold text-white mb-2">Research Scholarship</h5>
+                                <p class="text-sm text-slate-800 mb-3">Full funding for MSc/PhD water research</p>
+                                <div class="text-xs text-slate-500">Academic partnership</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Success Story -->
+                    <div class="glass-panel rounded-2xl p-8">
+                        <h4 class="text-lg font-semibold text-white mb-6">Success Story</h4>
+                        <div class="flex gap-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 text-white font-bold">
+                                SK
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-white">Sarah Kimani</h5>
+                                <p class="text-sm text-slate-400">Nairobi, Kenya</p>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-800 leading-relaxed mb-4">
+                            Received $8,000 to develop low-cost water purification using moringa seeds. 
+                            Now serving 5,000+ households across East Africa.
+                        </p>
+                        <div class="flex items-center gap-2 text-xs text-emerald-400">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Funded Spring 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rewards Section -->
+        <section id="section-rewards" class="hidden section-fade">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Stats -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="glass-panel rounded-2xl p-8 text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-coins text-2xl text-white"></i>
+                        </div>
+                        <div class="text-3xl font-bold text-white mb-1" id="statEarnings">$0</div>
+                        <div class="text-sm text-slate-400">Total Earnings</div>
+                    </div>
+                    <div class="glass-panel rounded-2xl p-8 text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-brand-400 to-brand-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-clipboard-check text-2xl text-white"></i>
+                        </div>
+                        <div class="text-3xl font-bold text-white mb-1" id="statVerified">0</div>
+                        <div class="text-sm text-slate-400">Verified Reports</div>
+                    </div>
+                    <div class="glass-panel rounded-2xl p-8 text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-star text-2xl text-white"></i>
+                        </div>
+                        <div class="text-3xl font-bold text-white mb-1" id="statImpact">0</div>
+                        <div class="text-sm text-slate-400">Impact Score</div>
+                    </div>
+                </div>
+
+                <!-- History -->
+                <div class="glass-panel rounded-2xl p-8 lg:p-10">
+                    <h3 class="text-xl font-semibold text-white mb-8">Rewards History</h3>
+                    <div id="rewardsHistory" class="space-y-4">
+                        <div class="text-center py-16 text-slate-500">
+                            <i class="fas fa-gift text-4xl mb-4 opacity-20"></i>
+                            <p class="mb-4">Start reporting incidents to earn rewards</p>
+                            <button onclick="switchTab('report')" class="text-brand-400 hover:text-brand-300 font-medium">
+                                Submit your first report →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div class="glass-panel w-full max-w-md rounded-2xl p-8 transform scale-95 opacity-0 transition-all duration-300" id="modalContent">
+                <div class="flex justify-between items-center mb-8">
+                    <h3 class="text-2xl font-semibold text-white">Sign In</h3>
+                    <button onclick="closeModal()" class="text-slate-400 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <form onsubmit="handleLogin(event)" class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-slate-800">Email Address</label>
+                        <input title="email" type="email" id="loginEmail" required 
+                            class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 placeholder-slate-500">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-medium text-slate-800">Password</label>
+                        <input title="password" type="password" required 
+                            class="input-clean w-full px-4 py-3.5 rounded-lg text-gray-800 placeholder-slate-500">
+                    </div>
+                    
+                    <div class="flex items-center justify-between text-sm">
+                        <label class="flex items-center gap-2 text-slate-800">
+                            <input type="checkbox" class="rounded border-slate-600 bg-slate-800">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="text-brand-400 hover:text-brand-300">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-500 hover:bg-brand-400 text-white font-semibold py-3.5 rounded-lg transition-colors">
+                        Sign In
+                    </button>
+
+                    <div class="relative my-6">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-slate-700"></div>
+                        </div>
+                        <div class="relative flex justify-center text-xs">
+                            <span class="px-2 bg-slate-900 text-slate-300">Or continue with</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <button type="button" class="flex items-center justify-center gap-2 py-3 border border-slate-600 rounded-lg hover:bg-slate-200 transition-colors text-sm text-slate-800">
+                            <i class="fab fa-google"></i>
+                            Google
+                        </button>
+                        <button type="button" class="flex items-center justify-center gap-2 py-3 border border-slate-600 rounded-lg hover:bg-slate-200 transition-colors text-sm text-slate-800">
+                            <i class="fas fa-mobile-alt"></i>
+                            Phone
+                        </button>
+                    </div>
+
+                    <p class="text-center text-sm text-slate-800">
+                        Don't have an account? 
+                        <button type="button" class="text-brand-400 hover:text-brand-300 font-medium">Create account</button>
+                    </p>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <!-- Bottom Bar -->
-    <div class="footer-bottom">
-        © 2026 HYDROS-C. All rights reserved.
+    <!-- Toast -->
+    <div id="toast" class="fixed bottom-8 right-8 z-[100] transform translate-x-full opacity-0 transition-all duration-300">
+        <div class="glass-panel px-6 py-4 rounded-xl border-l-4 border-emerald-500 flex items-center gap-4 min-w-[300px]">
+            <i class="fas fa-check-circle text-emerald-400 text-xl"></i>
+            <div>
+                <h4 class="font-semibold text-white text-sm" id="toastTitle">Success</h4>
+                <p class="text-xs text-slate-400" id="toastMessage">Operation completed</p>
+            </div>
+        </div>
     </div>
 
-</footer>
+    <script>
+        // Data Management
+        const Storage = {
+            get: (key) => JSON.parse(localStorage.getItem(`hydrosc_${key}`) || 'null'),
+            set: (key, value) => localStorage.setItem(`hydrosc_${key}`, JSON.stringify(value))
+        };
+
+        let currentUser = Storage.get('user');
+        let reports = Storage.get('reports') || [];
+        let innovations = Storage.get('innovations') || [];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            if (currentUser) updateUserUI();
+            loadRecentActivity();
+            updateStats();
+        });
+
+        // Tab Switching
+        function switchTab(tab) {
+            // Update buttons
+            document.querySelectorAll('[id^="tab-"]').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('text-slate-400');
+            });
+            document.getElementById(`tab-${tab}`).classList.add('tab-active');
+            document.getElementById(`tab-${tab}`).classList.remove('text-slate-400');
+
+            // Update sections
+            document.querySelectorAll('section[id^="section-"]').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById(`section-${tab}`).classList.remove('hidden');
+        }
+
+        // Anonymous Toggle
+        function toggleAnon() {
+            const btn = document.getElementById('anonToggle');
+            const dot = btn.querySelector('div');
+            const isActive = btn.classList.contains('bg-brand-500');
+            
+            if (isActive) {
+                btn.classList.remove('bg-brand-500');
+                btn.classList.add('bg-slate-600');
+                dot.style.right = 'auto';
+                dot.style.left = '4px';
+            } else {
+                btn.classList.add('bg-brand-500');
+                btn.classList.remove('bg-slate-600');
+                dot.style.left = 'auto';
+                dot.style.right = '4px';
+            }
+        }
+
+        // Company Toggle
+        function toggleCompany(checkbox) {
+            document.getElementById('companyFields').classList.toggle('hidden', !checkbox.checked);
+        }
+
+        // File Handling
+        function handleFiles(input) {
+            const list = document.getElementById('fileList');
+            list.classList.remove('hidden');
+            list.innerHTML = Array.from(input.files).map(f => `
+                <div class="flex items-center justify-between p-3 bg-slate-800 rounded-lg text-sm">
+                    <span class="text-white truncate">${f.name}</span>
+                    <span class="text-slate-500">${(f.size/1024/1024).toFixed(1)} MB</span>
+                </div>
+            `).join('');
+        }
+
+        // Geolocation
+        function getLocation() {
+            if (!navigator.geolocation) return;
+            navigator.geolocation.getCurrentPosition(pos => {
+                const coords = `${pos.coords.latitude.toFixed(4)}, ${pos.coords.longitude.toFixed(4)}`;
+                document.querySelector('input[placeholder*="GPS"]').value = coords;
+                showToast('Location captured');
+            });
+        }
+
+        // Form Submissions
+        function submitReport(e) {
+            e.preventDefault();
+            if (!currentUser) {
+                openModal();
+                return showToast('Please sign in first', 'error');
+            }
+
+            const report = {
+                id: Date.now(),
+                type: e.target.querySelector('select').value,
+                location: e.target.querySelectorAll('select')[1].value,
+                date: new Date().toLocaleDateString(),
+                status: 'pending',
+                reward: Math.floor(Math.random() * 400) + 100
+            };
+
+            reports.push(report);
+            Storage.set('reports', reports);
+            
+            showToast('Report submitted successfully');
+            e.target.reset();
+            updateStats();
+            loadRecentActivity();
+        }
+
+        function submitInnovation(e) {
+            e.preventDefault();
+            if (!currentUser) {
+                openModal();
+                return showToast('Please sign in first', 'error');
+            }
+
+            const innovation = {
+                id: Date.now(),
+                title: e.target.querySelector('input').value,
+                date: new Date().toLocaleDateString(),
+                status: 'under_review'
+            };
+
+            innovations.push(innovation);
+            Storage.set('innovations', innovations);
+            
+            showToast('Proposal submitted for review');
+            e.target.reset();
+            loadSubmissions();
+        }
+
+        function saveDraft() {
+            showToast('Draft saved locally');
+        }
+
+        // UI Updates
+        function loadRecentActivity() {
+            const mock = [
+                { type: 'Toxic Spillage', location: 'Nairobi River', status: 'verified', reward: 350, date: '2h ago' },
+                { type: 'Industrial Waste', location: 'Lake Victoria', status: 'pending', reward: 0, date: '5h ago' }
+            ];
+            
+            document.getElementById('recentList').innerHTML = mock.map(r => `
+                <div class="flex items-center justify-between py-3 border-b border-white/5 last:border-0">
+                    <div>
+                        <div class="text-sm text-white font-medium">${r.type}</div>
+                        <div class="text-xs text-slate-500">${r.location} • ${r.date}</div>
+                    </div>
+                    ${r.status === 'verified' 
+                        ? `<div class="text-right"><div class="text-emerald-400 font-semibold text-sm">+$${r.reward}</div><div class="text-xs text-emerald-400/70">Verified</div></div>`
+                        : `<div class="text-xs text-amber-400"><i class="fas fa-clock mr-1"></i>Pending</div>`
+                    }
+                </div>
+            `).join('');
+        }
+
+        function loadSubmissions() {
+            const list = document.getElementById('submissionsList');
+            const userSubs = innovations.filter(i => i.userId === currentUser?.id);
+            
+            list.innerHTML = userSubs.length ? userSubs.map(s => `
+                <div class="p-4 bg-slate-800/30 rounded-lg border-l-4 border-purple-500">
+                    <div class="flex justify-between items-start">
+                        <h5 class="font-medium text-white">${s.title}</h5>
+                        <span class="text-xs px-2 py-1 bg-yellow-500/10 text-yellow-400 rounded">${s.status}</span>
+                    </div>
+                    <div class="text-xs text-slate-500 mt-2">Submitted ${s.date}</div>
+                </div>
+            `).join('') : '<p class="text-slate-500 text-center py-8">No submissions yet</p>';
+        }
+
+        function updateStats() {
+            const verified = reports.filter(r => r.status === 'verified');
+            const total = verified.reduce((a, b) => a + b.reward, 0);
+            
+            document.getElementById('statEarnings').textContent = `$${total}`;
+            document.getElementById('statVerified').textContent = verified.length;
+            document.getElementById('statImpact').textContent = verified.length * 100;
+
+            const history = document.getElementById('rewardsHistory');
+            if (verified.length) {
+                history.innerHTML = verified.map(r => `
+                    <div class="flex items-center justify-between p-5 bg-slate-800/30 rounded-xl border-l-4 border-emerald-500">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-check text-emerald-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium text-white">${r.type}</div>
+                                <div class="text-sm text-slate-500">${r.date}</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xl font-bold text-emerald-400">+$${r.reward}</div>
+                            <div class="text-xs text-slate-500">Verified</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Auth
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            currentUser = {
+                id: Date.now(),
+                email: email,
+                name: email.split('@')[0],
+                joined: new Date().toISOString()
+            };
+            Storage.set('user', currentUser);
+            closeModal();
+            updateUserUI();
+            showToast('Welcome back');
+        }
+
+        function updateUserUI() {
+            document.getElementById('loginBtn').classList.add('hidden');
+            document.getElementById('userSection').classList.remove('hidden');
+            document.getElementById('userSection').classList.add('flex');
+            document.getElementById('userName').textContent = currentUser.name;
+            document.getElementById('userAvatar').textContent = currentUser.name.slice(0, 2).toUpperCase();
+        }
+
+        function logout() {
+            Storage.remove('user');
+            location.reload();
+        }
+
+        // Modal
+        function openModal() {
+            const modal = document.getElementById('loginModal');
+            const content = document.getElementById('modalContent');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('loginModal');
+            const content = document.getElementById('modalContent');
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+
+        // Toast
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').textContent = message;
+            
+            toast.classList.remove('translate-x-full', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-x-full', 'opacity-0');
+            }, 3000);
+        }
+    </script>
 
 </body>
 </html>
