@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #E6F5F6;
+    background-color: #ffffff;
 }
 
 
@@ -50,12 +50,12 @@ body {
 }
 
 .nav-links a:hover {
-    color: #A8DADC;
+    color: #4A90E2;
 }
 
 /* CTA BUTTON */
 .cta {
-    background: #A8DADC;
+    background: white;
     color: #000 !important;
     padding: 8px 16px;
     border-radius: 25px;
@@ -63,7 +63,7 @@ body {
 }
 
 .cta:hover {
-    background: white;
+    background: #4A90E2;
 }
 
 /* MOBILE MENU */
@@ -208,7 +208,7 @@ body {
 
 
 .footer {
-    background: linear-gradient(to right, #1B4965, #2E86AB);
+    background: linear-gradient(to right, #1B4965, #4A90E2);
     color: white;
     padding: 60px 40px 20px;
 }

@@ -6,7 +6,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #E6F5F6;
+            background: #fff;
             color: #e2e8f0;
             overflow-x: hidden;
         }
@@ -23,7 +23,7 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: linear-gradient(135deg, #0a1628 0%, #000 50%, #000 100%);
+            background: linear-gradient(135deg, #0a1628 0%, #ffff 50%,  100%);
             overflow: hidden;
         }
 
@@ -70,7 +70,7 @@
             position: absolute;
             width: 2px;
             height: 2px;
-            background: #E6F5F6;
+            background: #95cacc;
             border-radius: 50%;
             animation: float-up 15s infinite linear;
         }
@@ -302,10 +302,10 @@
 
         .filter-btn {
             padding: 0.75rem 1.5rem;
-            background: rgba(30, 41, 59, 0.5);
+            background: #a8dadc;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 9999px;
-            color: #94a3b8;
+            color: white;
             font-size: 0.875rem;
             font-weight: 500;
             cursor: pointer;
@@ -317,9 +317,9 @@
 
         .filter-btn:hover,
         .filter-btn.active {
-            background: rgba(56, 189, 248, 0.2);
-            border-color: white;
-            color: white;
+            background:#a8dadc;
+            border-color: black;
+            color: black;
             transform: translateY(-2px);
         }
 
@@ -419,4 +419,13 @@
             100% {
                 background-position: -200% 0;
             }
+        }
+
+        .join-restoration button{
+              border: 2px solid black;
+              background-color: #1B4965;
+              color: white;
+              padding: 14px 28px;
+              font-size: 16px;
+              border-radius: 20px;
         }
