@@ -26,7 +26,7 @@ This project mainly focuses on JavaScript elements accompanied with other techni
 The page is fully responsive, a clear and readable topography, animation use, cards, images, compatibility of the content to the company, styling and use of blending colors. 
 
 ## PAGE
-![Alt text](assets\image.png)
+![Alt text](assets/image.png)
 
   ### The Repository
   ``` bash
