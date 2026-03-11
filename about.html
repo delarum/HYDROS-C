@@ -29,68 +29,7 @@
             }
         }
     </script>
-    <style>
-        .wave-bg {
-            background: linear-gradient(135deg, #b8e6e6 0%, #e0f7f7 100%);
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #1e3a5f 0%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15);
-        }
-
-        .timeline-line {
-            background: linear-gradient(to bottom, #3b82f6, #1e3a5f);
-        }
-
-        .pulse-ring {
-            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-        }
-
-        @keyframes pulse-ring {
-            0% {
-                transform: scale(0.33);
-                opacity: 1;
-            }
-
-            80%,
-            100% {
-                transform: scale(2);
-                opacity: 0;
-            }
-        }
-
-        .float-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .counter {
-            font-variant-numeric: tabular-nums;
-        }
-    </style>
+    <link rel="stylesheet" href="about.css">
 </head>
 
 <body class="font-sans bg-gray-50 text-gray-800">
@@ -567,64 +506,16 @@
         </div>
 
     </footer>
-    <!-- Leaflet JS FIRST -->
+    <!-- Leaflet JS FIRST
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <!-- AOS JS SECOND -->
+     AOS JS SECOND 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-    <!-- YOUR SCRIPT LAST -->
-    <script src="hydros.js"></script>
+     YOUR SCRIPT LAST 
+    <script src="hydros.js"></script> -->
 
-    <script>
-        // Counter Animation
-        const counters = document.querySelectorAll('.counter');
-        const speed = 200;
-
-        const animateCounters = () => {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
-                const inc = target / speed;
-
-                if (count < target) {
-                    counter.innerText = Math.ceil(count + inc);
-                    setTimeout(animateCounters, 20);
-                } else {
-                    counter.innerText = target + (target === 85 ? '%' : '+');
-                }
-            });
-        };
-
-        // Intersection Observer for counters
-        const observerOptions = {
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        const statsSection = document.querySelector('.counter').closest('section');
-        if (statsSection) {
-            observer.observe(statsSection);
-        }
-
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <script src="about.js"></script>
 
 </body>
 

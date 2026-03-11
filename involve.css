@@ -1,0 +1,68 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e6f5f6;
+            color: #f8fafc;
+        }
+
+        .glass-panel {
+            background: #ADDADC;
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1B4965, #4A90E2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .input-clean {
+            background: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .input-clean:focus {
+            outline: none;
+            border-color: #1B4965;
+            box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+        }
+
+        .tab-active {
+            background: linear-gradient(135deg, #1B4965, #4A90E2);
+            color: white;
+        }
+
+        .reward-pulse {
+            animation: pulse-subtle 2s infinite;
+        }
+
+        @keyframes pulse-subtle {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .section-fade {
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
