@@ -98,8 +98,9 @@ body {
 
 .hero {
     height: 100vh;
-    background-color: #A8DADC;
-    color: #000;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4)), url("../assets/790264.jpg");
+
+    color: #ffffff;
     ;
     display: flex;
     flex-direction: column;
@@ -110,6 +111,8 @@ body {
     border-bottom-right-radius: 100px;
     border-bottom-left-radius: 100px;
 }
+
+
 
 .hero h1 {
     font-size: 60px;
