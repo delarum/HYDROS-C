@@ -1,10 +1,10 @@
 // Data Management
         const Storage = {
-            get: (key) => JSON.parse(localStorage.getItem(`hydrosc_${key}`) || 'null'),
+            get: (key) => JSON.parse(localStorage.getItem(`hydrosc_${key}`) || 'null'),//returns the stored user as object or null then saves the object as a json string
             set: (key, value) => localStorage.setItem(`hydrosc_${key}`, JSON.stringify(value))
         };
 
-        let currentUser = Storage.get('user');
+        let currentUser = Storage.get('user');//redas user immediately from the LS when page is loaded
         let reports = Storage.get('reports') || [];
         let innovations = Storage.get('innovations') || [];
 
@@ -221,7 +221,7 @@
         document.getElementById("logoutBtn").addEventListener("click", logout);
 
 function logout() {
-    localStorage.removeItem("hydrosc_user");
+    localStorage.removeItem("hydrosc_user");//my data was stored as hydros-user not just the user key
     currentUser = null;
     location.reload();
 }
