@@ -138,7 +138,7 @@
         // Parallax effect on scroll as you scroll the waves rotate slightly at different speeds
         let ticking = false;//to prevent the animation from running too many times per second
         function updateParallax() {
-            const scrolled = window.pageYOffset;//detecting how far one has scrolled
+            const scrolled = window.pageYOffset;//detecting how far one has scrolled vertically in pixels
             const waves = document.querySelectorAll('.wave');
 
             waves.forEach((wave, index) => {
@@ -151,8 +151,8 @@
 
         window.addEventListener('scroll', () => {
             if (!ticking) {
-                window.requestAnimationFrame(updateParallax);
-                ticking = true;
+                window.requestAnimationFrame(updateParallax);//to run the animation at the next repaint frame
+                ticking = true;//its locked so that it does not run again immedeately
             }
         });
 

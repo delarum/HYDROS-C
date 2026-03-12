@@ -28,7 +28,7 @@ async function loadWeather() {
         const weather = data.current_weather;
 
         // convert time to EAT
-        const eatTime = new Date(weather.time).toLocaleString("en-KE", {
+        const eatTime = new Date(weather.time).toLocaleString("en-KE", { //converts date into a human readable format afterfoemating and manipulating time
             timeZone: "Africa/Nairobi",
             hour: "2-digit",
             minute: "2-digit",

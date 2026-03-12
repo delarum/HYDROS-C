@@ -210,7 +210,7 @@
             showToast('Welcome back');
         }
 
-        function updateUserUI() {
+        function updateUserUI() {//hides login buttton then user section with name+avatar
             document.getElementById('loginBtn').classList.add('hidden');
             document.getElementById('userSection').classList.remove('hidden');
             document.getElementById('userSection').classList.add('flex');
@@ -221,7 +221,8 @@
         document.getElementById("logoutBtn").addEventListener("click", logout);
 
 function logout() {
-    localStorage.removeItem("user");
+    localStorage.removeItem("hydrosc_user");
+    currentUser = null;
     location.reload();
 }
 
