@@ -1,35 +1,45 @@
 
-        const locations = [
+const locations = [
 
-            { name: "Westlands", lat: -1.2676, lon: 36.8108 },
-            { name: "Kamkunji", lat: -1.2816, lon: 36.8422 },
-            { name: "Embakasi", lat: -1.3190, lon: 36.9278 },
-            { name: "Starehe", lat: -1.2833, lon: 36.8167 },
-            { name: "Kasarani", lat: -1.2210, lon: 36.8970 }
+    { name: "Westlands", lat: -1.2676, lon: 36.8108 },
+    { name: "Kamkunji", lat: -1.2816, lon: 36.8422 },
+    { name: "Embakasi", lat: -1.3190, lon: 36.9278 },
+    { name: "Starehe", lat: -1.2833, lon: 36.8167 },
+    { name: "Kasarani", lat: -1.2210, lon: 36.8970 }
 
-        ];
+];
 
-        async function loadWeather() {
 
-            const container = document.getElementById("weatherGrid");
 
-            container.innerHTML = "";
+async function loadWeather() {
 
-            for (const loc of locations) {
+    const container = document.getElementById("weatherGrid");
 
-                const url = `https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current_weather=true&hourly=relativehumidity_2m,cloudcover,windspeed_10m`;
+    container.innerHTML = "";
 
-                const res = await fetch(url);
+    for (const loc of locations) {
 
-                const data = await res.json();
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current_weather=true&hourly=relativehumidity_2m,cloudcover,windspeed_10m`;
 
-                const weather = data.current_weather;
+        const res = await fetch(url);
 
-                const card = document.createElement("div");
+        const data = await res.json();
 
-                card.classList.add("weather-card");
+        const weather = data.current_weather;
 
-                card.innerHTML = `
+        // convert time to EAT
+        const eatTime = new Date(weather.time).toLocaleString("en-KE", {
+            timeZone: "Africa/Nairobi",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+        });
+
+        const card = document.createElement("div");
+
+        card.classList.add("weather-card");
+
+        card.innerHTML = `
 
 <div class="weather-location">${loc.name}</div>
 
@@ -47,19 +57,21 @@
 <span>${weather.winddirection}°</span>
 </div>
 
-<div class="weather-data">
+ 
+
+ <div class="weather-data">
 <span>Time</span>
-<span>${weather.time}</span>
+<span>${eatTime} EAT</span>
 </div>
 
 `;
 
-                container.appendChild(card);
+        container.appendChild(card);
 
-            }
+    }
 
-        }
+}
 
-        loadWeather();
+loadWeather();
 
-        setInterval(loadWeather, 600000);
+setInterval(loadWeather, 600000);
