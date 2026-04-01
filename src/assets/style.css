@@ -13,87 +13,133 @@ body {
 
 /* THE HOMEPAGE*/
 /* NAVBAR BASE */
+/* NAVBAR */
 .navbar {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to right, #1B4965, #4A90E2);
-    color: white;
-    z-index: 1000;
-    top: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(10, 22, 40, 0.92);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1000;
 }
 
-/* LOGO */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
 .logo {
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 2px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
 }
 
-/* LINKS */
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    align-items: center;
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  align-items: center;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: .3s;
+  text-decoration: none;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #4A90E2;
+  color: #38bdf8;
 }
 
-/* CTA BUTTON */
-.cta {
-    background: white;
-    color: #000 !important;
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-weight: bold;
+.cta-btn {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 10px;
+  background: #0ea5e9;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.cta:hover {
-    background: #4A90E2;
+.cta-btn:hover {
+  background: #0284c7;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 /* MOBILE MENU */
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgba(10, 22, 40, 0.98);
+  padding: 1.5rem 2rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #e2e8f0;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: #38bdf8;
+}
+
+.mobile-btn {
+  margin-top: 1rem;
+  width: 100%;
 }
 
 /* RESPONSIVE */
-@media(max-width:768px) {
+@media (max-width: 900px) {
+  .desktop-nav,
+  .desktop-btn {
+    display: none;
+  }
 
-    .nav-links {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        background: #1B4965;
-        flex-direction: column;
-        padding: 20px;
-        display: none;
-    }
+  .hamburger {
+    display: block;
+  }
 
-    .nav-links.active {
-        display: flex;
-    }
+  .mobile-menu.open {
+    display: flex;
+  }
 
-    .menu-toggle {
-        display: block;
-    }
+  .navbar-container {
+    height: 75px;
+    padding: 0 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
 }
 
 .hero {
@@ -158,20 +204,50 @@ body {
     /* deeper shadow on hover */
 }
 
-/* ===== MAP SECTION ===== */
-.map-section {
-    padding: 80px 20px;
-    background: #f4f9fb;
-    text-align: center;
-    border-radius: 100px;
+/* =========================
+   MAP SECTION
+========================= */
+.map-wrapper {
+  padding: 4rem 1rem 2rem;
 }
 
-#map {
-    height: 500px;
-    width: 100%;
-    margin: auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.map-section {
+  max-width: 1450px;
+  margin: 0 auto;
+  background: #eaf0f4;
+  border-radius: 80px;
+  padding: 4.5rem 2rem 3rem;
+  text-align: center;
+}
+
+.map-section h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 2.2rem;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+.map-container {
+  width: 100%;
+  height: 540px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+  margin-bottom: 2rem;
+}
+
+.leaflet-map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-description {
+  max-width: 1180px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 2;
+  color: #3f4b5a;
+  padding: 0 1rem;
 }
 
 /* ================= TRACKER PULSE ================= */

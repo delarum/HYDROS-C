@@ -26,17 +26,18 @@ function Involve() {
   }
 
   return (
-    <div className="min-h-screen antialiased">
+    <div className="min-h-screen antialiased bg-ocean-900">
       <Navbar openModal={() => setShowModal(true)} />
 
       <main className="pt-32 pb-24 px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20 section-fade">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-sm mb-8">
+            <i className="fas fa-shield-alt text-xs"></i>
             <span>Secure & Anonymous Reporting</span>
           </div>
 
-          <h2 className="text-4xl lg:text-6xl font-light text-gray-800 mb-6 tracking-tight">
+          <h2 className="text-4xl lg:text-6xl font-light text-white mb-6 tracking-tight">
             Be a <span className="gradient-text font-semibold">Water Guardian</span>
           </h2>
 
@@ -50,18 +51,18 @@ function Involve() {
         <TabButtons activeTab={activeTab} setActiveTab={setActiveTab} />
 
         {activeTab === "report" && (
-          <div className="grid lg:grid-cols-12 gap-8">
+          <div className="grid lg:grid-cols-12 gap-8 section-fade">
             <div className="lg:col-span-8">
               <ReportForm showToast={showToast} />
             </div>
             <div className="lg:col-span-4">
-              <SidebarCards />
+              <SidebarCards type="report" />
             </div>
           </div>
         )}
 
         {activeTab === "innovate" && (
-          <div className="grid lg:grid-cols-12 gap-8">
+          <div className="grid lg:grid-cols-12 gap-8 section-fade">
             <div className="lg:col-span-8">
               <InnovationForm showToast={showToast} />
             </div>
@@ -77,7 +78,7 @@ function Involve() {
       <Footer />
 
       {showModal && <LoginModal closeModal={() => setShowModal(false)} />}
-      {toast.show && <Toast title={toast.title} message={toast.message} />}
+      {toast.show && <Toast title={toast.title} message={toast.message} onClose={() => setToast({ ...toast, show: false })} />}
     </div>
   );
 }
