@@ -3,9 +3,9 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../assets/about.css";
 
-import leader1 from "../public/medium-shot-woman-working-as-lawyer (1).jpg";
-import leader2 from "../public/man-with-dreads-jamaica.jpg";
-import leader3 from "../public/medium-shot-woman-working-as-lawyer.jpg";
+import leader1 from "../../public/images/leader2.jpg";
+import leader2 from "../../public/images/leader3.jpg";
+import leader3 from "../../public/images/man1.jpg";
 
 function About() {
   useEffect(() => {

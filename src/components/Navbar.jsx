@@ -22,12 +22,12 @@ function Navbar() {
         <ul className="nav-links desktop-nav">
           <li><Link to="/" onClick={closeMenu}>Home</Link></li>
           <li><Link to="../pages/About" onClick={closeMenu}>About Us</Link></li>
-          <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
+          <li><Link to="../pages/Projects" onClick={closeMenu}>Projects</Link></li>
           <li><Link to="../pages/Weather" onClick={closeMenu}>Weather</Link></li>
-          <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+          <li><Link to="../pages/Contact" onClick={closeMenu}>Contact</Link></li>
         </ul>
 
-        <Link to="/involve">
+        <Link to="../pages/Involve">
           <button className="cta-btn desktop-btn">Become Involved</button>
         </Link>
 
@@ -41,10 +41,10 @@ function Navbar() {
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <Link to="/" onClick={closeMenu}>Home</Link>
         <Link to="../pages/About" onClick={closeMenu}>About Us</Link>
-        <Link to="/projects" onClick={closeMenu}>Projects</Link>
-        <Link to="./pages/Weather" onClick={closeMenu}>Weather</Link>
-        <Link to="/contact" onClick={closeMenu}>Contact</Link>
-        <Link to="./pages/involve" onClick={closeMenu}>
+        <Link to="../pages/Projects" onClick={closeMenu}>Projects</Link>
+        <Link to="../pages/Weather" onClick={closeMenu}>Weather</Link>
+        <Link to="../pages/Contact" onClick={closeMenu}>Contact</Link>
+        <Link to="../pages/Involve" onClick={closeMenu}>
           <button className="cta-btn mobile-btn">
             Become Involved
           </button>
