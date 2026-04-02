@@ -21,9 +21,9 @@ function Navbar() {
         {/* Desktop Nav */}
         <ul className="nav-links desktop-nav">
           <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-          <li><Link to="/about" onClick={closeMenu}>About Us</Link></li>
+          <li><Link to="../pages/About" onClick={closeMenu}>About Us</Link></li>
           <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
-          <li><Link to="/weather" onClick={closeMenu}>Weather</Link></li>
+          <li><Link to="../pages/Weather" onClick={closeMenu}>Weather</Link></li>
           <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
         </ul>
 
@@ -40,9 +40,9 @@ function Navbar() {
       {/* Mobile Menu */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <Link to="/" onClick={closeMenu}>Home</Link>
-        <Link to="/about" onClick={closeMenu}>About Us</Link>
+        <Link to="../pages/About" onClick={closeMenu}>About Us</Link>
         <Link to="/projects" onClick={closeMenu}>Projects</Link>
-        <Link to="/weather" onClick={closeMenu}>Weather</Link>
+        <Link to="./pages/Weather" onClick={closeMenu}>Weather</Link>
         <Link to="/contact" onClick={closeMenu}>Contact</Link>
         <Link to="./pages/involve" onClick={closeMenu}>
           <button className="cta-btn mobile-btn">
